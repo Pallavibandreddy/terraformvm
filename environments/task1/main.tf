@@ -34,7 +34,7 @@ module "vm" {
 
   vm_size       = var.vm_size
   admin_username = var.admin_username
-  admin_password      = var.admin_password
+  admin_password = var.admin_password
 
   network_interface_id = module.network.nic_id
 
