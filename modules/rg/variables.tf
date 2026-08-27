@@ -4,7 +4,7 @@ variable "resource_group_name" {
 }
 
 variable "location" {
-  description = "East USS"
+  description = "Indian South Central"
   type        = string
 }
 

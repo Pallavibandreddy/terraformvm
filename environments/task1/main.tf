@@ -6,7 +6,6 @@ module "resource_group" {
 
 }
 
-
 module "network" {
   source = "../../modules/net"
 
