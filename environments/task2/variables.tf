@@ -26,8 +26,18 @@ variable "nsg_name" {
   type = string
 }
 
-variable "nic_config" {
+variable "admin_username" {
+  type = string
+}
+
+variable "admin_password" {
+  type      = string
+  sensitive = true
+}
+
+variable "vm_config" {
   type = map(object({
+    vm_size        = string
     nic_name       = string
     public_ip_name = string
   }))

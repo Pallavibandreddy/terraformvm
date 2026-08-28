@@ -3,7 +3,6 @@ resource "azurerm_virtual_network" "this" {
   location            = var.location
   resource_group_name = var.resource_group_name
   address_space       = [var.vnet_address_space]
-
 }
 
 resource "azurerm_subnet" "this" {
@@ -41,20 +40,22 @@ resource "azurerm_network_security_group" "this" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
-
 }
 
 resource "azurerm_public_ip" "this" {
-  name                = var.public_ip_name
+  for_each = var.nic_config
+
+  name                = each.value.public_ip_name
   location            = var.location
   resource_group_name = var.resource_group_name
   allocation_method   = "Static"
   sku                 = "Standard"
-
 }
 
 resource "azurerm_network_interface" "this" {
-  name                = var.nic_name
+  for_each = var.nic_config
+
+  name                = each.value.nic_name
   location            = var.location
   resource_group_name = var.resource_group_name
 
@@ -62,12 +63,13 @@ resource "azurerm_network_interface" "this" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.this.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.this.id
+    public_ip_address_id          = azurerm_public_ip.this[each.key].id
   }
-
 }
 
 resource "azurerm_network_interface_security_group_association" "this" {
-  network_interface_id      = azurerm_network_interface.this.id
+  for_each = var.nic_config
+
+  network_interface_id      = azurerm_network_interface.this[each.key].id
   network_security_group_id = azurerm_network_security_group.this.id
 }
