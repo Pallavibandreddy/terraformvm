@@ -126,17 +126,3 @@ variable "log_analytics_name" {
   type        = string
 }
 
-variable "sql_server" {
-  description = "Azure SQL Server FQDN"
-  type        = string
-}
-
-variable "sql_database" {
-  description = "Azure SQL Database name"
-  type        = string
-}
-
-variable "key_vault_url" {
-  description = "Azure Key Vault URI"
-  type        = string
-}
