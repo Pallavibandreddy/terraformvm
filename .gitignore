@@ -21,3 +21,8 @@ crash.*.log
 
 # VS Code
 .vscode/
+# Deployment packages
+*.zip
+
+# Node.js dependencies
+node_modules/

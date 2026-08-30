@@ -1,0 +1,960 @@
+========== New Cold Start Attempt (2026-08-30T06:45:31.4589447+00:00) ==========
+2026-08-30T06:45:31.4589447+00:00 ContainerStatus: State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T06:45:33.8099052+00:00 ContainerStatus: State: Starting, Action: StartingMsiContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T06:45:46.7721765+00:00 ContainerStatus: State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T06:45:46.7729039+00:00 ContainerStatus: Container start method called.
+2026-08-30T06:45:46.7805675+00:00 ContainerStatus: State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.4:13209/appsvc/node:20-lts_20260710.8.tuxprod for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T06:45:46.7808958+00:00 ContainerStatus: Establishing network.
+2026-08-30T06:45:46.7811331+00:00 ContainerStatus: Pulling image: appsvc/node:20-lts_20260710.8.tuxprod.
+2026-08-30T06:45:46.9524797+00:00 ContainerStatus: Container is starting.
+2026-08-30T06:45:46.9528806+00:00 ContainerStatus: State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T06:45:46.9531382+00:00 ContainerStatus: Establishing user namespace if not established already.
+2026-08-30T06:45:46.9533750+00:00 ContainerStatus: Establishing network if not established already.
+2026-08-30T06:45:46.9536393+00:00 ContainerStatus: Mounting volumes.
+2026-08-30T06:45:46.9541520+00:00 ContainerStatus: Nested mountpoint site/wwwroot
+2026-08-30T06:45:46.9921521+00:00 ContainerStatus: Nested mountpoint volatile/logs
+2026-08-30T06:45:47.0033225+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T06:45:47.0437473+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T06:45:47.0836435+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T06:45:47.1143673+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T06:45:47.1326548+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T06:45:47.3149433+00:00 ContainerStatus: Skipping optional volume mount 'Package' at /home/site/wwwroot.
+2026-08-30T06:45:47.4254084+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for app-devopsapp-task5. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-08-30T06:45:47.4330501+00:00 ContainerStatus: Creating container.
+2026-08-30T06:45:47.4334614+00:00 ContainerStatus: Creating pipes for streaming container io.
+2026-08-30T06:45:47.4338280+00:00 ContainerStatus: Creating stdout named pipe at /podr/container/pipe/0d658089eb3e_app-devopsapp-task5/stdout_ed5ce30af4434eebab88ab64aaa19415.
+2026-08-30T06:45:47.4342217+00:00 ContainerStatus: Successfully created stdout named pipe at: /podr/container/pipe/0d658089eb3e_app-devopsapp-task5/stdout_ed5ce30af4434eebab88ab64aaa19415.
+2026-08-30T06:45:47.4345586+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/0d658089eb3e_app-devopsapp-task5/stdout_ed5ce30af4434eebab88ab64aaa19415 for reading in non-blocking mode.
+2026-08-30T06:45:47.4349386+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/0d658089eb3e_app-devopsapp-task5/stdout_ed5ce30af4434eebab88ab64aaa19415.
+2026-08-30T06:45:47.4352033+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/0d658089eb3e_app-devopsapp-task5/stdout_ed5ce30af4434eebab88ab64aaa19415.
+2026-08-30T06:45:47.4431905+00:00 ContainerStatus: Creating stderr named pipe at /podr/container/pipe/0d658089eb3e_app-devopsapp-task5/stderr_e9e0acf24b774209b291300140cfa08d.
+2026-08-30T06:45:47.4436050+00:00 ContainerStatus: Successfully created stderr named pipe at: /podr/container/pipe/0d658089eb3e_app-devopsapp-task5/stderr_e9e0acf24b774209b291300140cfa08d.
+2026-08-30T06:45:47.4440387+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/0d658089eb3e_app-devopsapp-task5/stderr_e9e0acf24b774209b291300140cfa08d for reading in non-blocking mode.
+2026-08-30T06:45:47.4443087+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/0d658089eb3e_app-devopsapp-task5/stderr_e9e0acf24b774209b291300140cfa08d.
+2026-08-30T06:45:47.4445565+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/0d658089eb3e_app-devopsapp-task5/stderr_e9e0acf24b774209b291300140cfa08d.
+2026-08-30T06:45:47.4448444+00:00 ContainerStatus: Creating container with image: appsvc/node:20-lts_20260710.8.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/node:20-lts_20260710.8.tuxprod
+2026-08-30T06:45:47.7747447+00:00 ContainerStatus: Starting container: 0d658089eb3e_app-devopsapp-task5.
+2026-08-30T06:45:47.8134502+00:00 ContainerStatus: Starting watchers and probes.
+2026-08-30T06:45:47.8435761+00:00 ContainerStatus: Starting metrics collection.
+2026-08-30T06:45:47.8439872+00:00 ContainerStatus: Container is running.
+2026-08-30T06:45:47.8441636+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T06:45:47.9052398+00:00 ContainerStatus: Container start method finished after 1132 ms.
+2026-08-30T06:45:47.9340929+00:00 ContainerStatus: State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T06:45:47.9627093+00:00 ContainerStatus: State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-08-30T06:45:48.2642781+00:00 ContainerStream:    _____                               
+2026-08-30T06:45:48.2644756+00:00 ContainerStream:   /  _  \ __________ _________   ____  
+2026-08-30T06:45:48.2644854+00:00 ContainerStream:  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2026-08-30T06:45:48.2644895+00:00 ContainerStream: /    |    \/    /|  |  /|  | \/\  ___/ 
+2026-08-30T06:45:48.2644956+00:00 ContainerStream: \____|__  /_____ \____/ |__|    \___  >
+2026-08-30T06:45:48.2645003+00:00 ContainerStream:         \/      \/                  \/ 
+2026-08-30T06:45:48.2645039+00:00 ContainerStream: A P P   S E R V I C E   O N   L I N U X
+2026-08-30T06:45:48.2645058+00:00 ContainerStream: 
+2026-08-30T06:45:48.2645103+00:00 ContainerStream: Documentation    : http://aka.ms/webapp-linux
+2026-08-30T06:45:48.2645144+00:00 ContainerStream: NodeJS quickstart: https://aka.ms/node-qs
+2026-08-30T06:45:48.2645174+00:00 ContainerStream: NodeJS Version   : v20.20.2
+2026-08-30T06:45:48.2645225+00:00 ContainerStream: Instance Name    : lw0sdlwk0000PM
+2026-08-30T06:45:48.2645282+00:00 ContainerStream: Instance Id      : a9cebb550e254ba9270d015acd372767c78fa4f3f79fc353fb793f2912e673b3
+2026-08-30T06:45:48.2645302+00:00 ContainerStream: 
+2026-08-30T06:45:48.2645339+00:00 ContainerStream: Note: Any data outside '/home' is not persisted
+2026-08-30T06:45:50.3749757+00:00 ContainerStream: Starting OpenBSD Secure Shell server: sshd.
+2026-08-30T06:45:50.3870621+00:00 ContainerStream: WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-30T06:45:50.4240175+00:00 ContainerStream: Updating certificates in /etc/ssl/certs...
+2026-08-30T06:46:05.7502537+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_ECC_Root_CA_2022.pem
+2026-08-30T06:46:05.7511217+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_RSA_Root_CA_2022.pem
+2026-08-30T06:46:05.9509115+00:00 ContainerStream: rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2026-08-30T06:46:05.9822785+00:00 ContainerStream: 4 added, 0 removed; done.
+2026-08-30T06:46:05.9892099+00:00 ContainerStream: Running hooks in /etc/ca-certificates/update.d...
+2026-08-30T06:46:05.9916489+00:00 ContainerStream: done.
+2026-08-30T06:46:06.0094576+00:00 ContainerStream: CA certificates copied and updated successfully.
+2026-08-30T06:46:06.1197337+00:00 ContainerStream: Starting periodic command scheduler: cron.
+2026-08-30T06:46:06.2402218+00:00 ContainerStream: Could not find build manifest file at '/home/site/wwwroot/oryx-manifest.toml'
+2026-08-30T06:46:06.2404793+00:00 ContainerStream: Could not find operation ID in manifest. Generating an operation id...
+2026-08-30T06:46:06.2407069+00:00 ContainerStream: Build Operation ID: 5b28da25-349e-45bf-9201-c647634037cb
+2026-08-30T06:46:07.0211510+00:00 ContainerStream: Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2026-08-30T06:46:07.1605377+00:00 ContainerStream: Writing output script to '/opt/startup/startup.sh'
+2026-08-30T06:46:07.3415536+00:00 ContainerStream: Running #!/bin/sh
+2026-08-30T06:46:07.3416076+00:00 ContainerStream: 
+2026-08-30T06:46:07.3416220+00:00 ContainerStream: # Enter the source directory to make sure the script runs where the user expects
+2026-08-30T06:46:07.3416310+00:00 ContainerStream: cd "/home/site/wwwroot"
+2026-08-30T06:46:07.3416340+00:00 ContainerStream: 
+2026-08-30T06:46:07.3416388+00:00 ContainerStream: export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2026-08-30T06:46:07.3416421+00:00 ContainerStream: if [ -z "$PORT" ]; then
+2026-08-30T06:46:07.3416469+00:00 ContainerStream: 		export PORT=8080
+2026-08-30T06:46:07.3416491+00:00 ContainerStream: fi
+2026-08-30T06:46:07.3416513+00:00 ContainerStream: 
+2026-08-30T06:46:07.3496399+00:00 ContainerStream: node /opt/startup/default-static-site.js
+2026-08-30T06:46:09.1127961+00:00 ContainerStatus: Site startup probe succeeded after 21.0681379 seconds.
+2026-08-30T06:46:09.2822229+00:00 ContainerStatus: State: Starting, Action: WarmUpProbeSucceeded, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site startup probe succeeded after 21.0681379 seconds., DetailsLevel: INFO
+========== New Cold Start Attempt (2026-08-30T06:59:52.7755079+00:00) ==========
+2026-08-30T06:59:52.7755079+00:00 ContainerStatus: State: Stopping, Action: UnmountingVolumes, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: , DetailsLevel: ERR
+2026-08-30T06:59:53.0255676+00:00 ContainerStatus: State: Stopping, Action: StoppingSiteNetworks, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: , DetailsLevel: ERR
+2026-08-30T06:59:53.1657451+00:00 ContainerStatus: State: Stopped, Action: None, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 06:59:53 (UTC), DetailsLevel: ERR
+2026-08-30T07:00:13.5467726+00:00 ContainerStatus: State: Stopping, Action: StoppingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 08/30/2026 06:46:09 (UTC), DetailsLevel: INFO
+2026-08-30T07:00:13.5472558+00:00 ContainerStatus: Container is terminating. Grace period: 5 seconds.
+2026-08-30T07:00:13.6042042+00:00 ContainerStatus: Stop and delete container. Retry count = 0
+2026-08-30T07:00:13.6051415+00:00 ContainerStatus: Stopping container: 0d658089eb3e_app-devopsapp-task5.
+2026-08-30T07:00:18.7053745+00:00 ContainerStatus: Deleting container: 0d658089eb3e_app-devopsapp-task5. Retry count = 0
+2026-08-30T07:00:18.8976543+00:00 ContainerStatus: Container spec TerminationMessagePolicy  path 
+2026-08-30T07:00:18.9055396+00:00 ContainerStatus: Container is terminated. Total time elapsed: 5349 ms.
+2026-08-30T07:00:19.2281168+00:00 ContainerStatus: Site: app-devopsapp-task5 stopped.
+2026-08-30T07:04:49.2903420+00:00 ContainerStatus: State: Starting, Action: EstablishingSiteNetworks, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 06:59:53 (UTC), DetailsLevel: ERR
+2026-08-30T07:04:54.6252464+00:00 ContainerStatus: State: Starting, Action: StartingMsiContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 06:59:53 (UTC), DetailsLevel: ERR
+2026-08-30T07:05:05.2358321+00:00 ContainerStatus: State: Starting, Action: StartingSiteContainers, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 06:59:53 (UTC), DetailsLevel: ERR
+2026-08-30T07:05:05.2363372+00:00 ContainerStatus: Container start method called.
+2026-08-30T07:05:05.2365068+00:00 ContainerStatus: State: Starting, Action: PullingImage, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Pulling image 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T07:05:05.2366427+00:00 ContainerStatus: Establishing network.
+2026-08-30T07:05:05.2368890+00:00 ContainerStatus: Pulling image: appsvc/node:20-lts_20260710.8.tuxprod.
+2026-08-30T07:05:05.4873117+00:00 ContainerStatus: Image appsvc/node:20-lts_20260710.8.tuxprod is pulled from registry 10.1.0.6:13209
+2026-08-30T07:05:05.4873892+00:00 ContainerStatus: Container is starting.
+2026-08-30T07:05:05.4874547+00:00 ContainerStatus: State: Starting, Action: MountingVolumes, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Mounting volumes for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T07:05:05.4875038+00:00 ContainerStatus: Establishing user namespace if not established already.
+2026-08-30T07:05:05.4875479+00:00 ContainerStatus: Establishing network if not established already.
+2026-08-30T07:05:05.4875991+00:00 ContainerStatus: Mounting volumes.
+2026-08-30T07:05:05.4876860+00:00 ContainerStatus: Nested mountpoint site/wwwroot
+2026-08-30T07:05:05.5180302+00:00 ContainerStatus: Nested mountpoint volatile/logs
+2026-08-30T07:05:05.5280224+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:05:05.5460929+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:05:05.5783207+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:05:05.5966433+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:05:05.5972848+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:05:05.9279415+00:00 ContainerStatus: Skipping optional volume mount 'Package' at /home/site/wwwroot.
+2026-08-30T07:05:06.0279048+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Finished pulling container image and mounting volumes for app-devopsapp-task5. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-08-30T07:05:06.0279425+00:00 ContainerStatus: Creating container.
+2026-08-30T07:05:06.0279672+00:00 ContainerStatus: Creating pipes for streaming container io.
+2026-08-30T07:05:06.0280021+00:00 ContainerStatus: Creating stdout named pipe at /podr/container/pipe/1f6a845d0a55_app-devopsapp-task5/stdout_e2523474167f4a91855e4a0c6463457b.
+2026-08-30T07:05:06.0280722+00:00 ContainerStatus: Successfully created stdout named pipe at: /podr/container/pipe/1f6a845d0a55_app-devopsapp-task5/stdout_e2523474167f4a91855e4a0c6463457b.
+2026-08-30T07:05:06.0280946+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/1f6a845d0a55_app-devopsapp-task5/stdout_e2523474167f4a91855e4a0c6463457b for reading in non-blocking mode.
+2026-08-30T07:05:06.0281251+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/1f6a845d0a55_app-devopsapp-task5/stdout_e2523474167f4a91855e4a0c6463457b.
+2026-08-30T07:05:06.0281488+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/1f6a845d0a55_app-devopsapp-task5/stdout_e2523474167f4a91855e4a0c6463457b.
+2026-08-30T07:05:06.0288484+00:00 ContainerStatus: Creating stderr named pipe at /podr/container/pipe/1f6a845d0a55_app-devopsapp-task5/stderr_d5349b854b364f2eb1b3159cc7cbb9cb.
+2026-08-30T07:05:06.0289053+00:00 ContainerStatus: Successfully created stderr named pipe at: /podr/container/pipe/1f6a845d0a55_app-devopsapp-task5/stderr_d5349b854b364f2eb1b3159cc7cbb9cb.
+2026-08-30T07:05:06.0289263+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/1f6a845d0a55_app-devopsapp-task5/stderr_d5349b854b364f2eb1b3159cc7cbb9cb for reading in non-blocking mode.
+2026-08-30T07:05:06.0559935+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/1f6a845d0a55_app-devopsapp-task5/stderr_d5349b854b364f2eb1b3159cc7cbb9cb.
+2026-08-30T07:05:06.0561643+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/1f6a845d0a55_app-devopsapp-task5/stderr_d5349b854b364f2eb1b3159cc7cbb9cb.
+2026-08-30T07:05:06.0562692+00:00 ContainerStatus: Overriding PORT environment variable with pre-calculated port: 8080.
+2026-08-30T07:05:06.0563095+00:00 ContainerStatus: Setting value of PORT variable to 8080
+2026-08-30T07:05:06.0564970+00:00 ContainerStatus: Creating container with image: appsvc/node:20-lts_20260710.8.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod
+2026-08-30T07:05:06.3467976+00:00 ContainerStatus: Starting container: 1f6a845d0a55_app-devopsapp-task5.
+2026-08-30T07:05:06.3786857+00:00 ContainerStatus: Starting watchers and probes.
+2026-08-30T07:05:06.3868534+00:00 ContainerStatus: Starting metrics collection.
+2026-08-30T07:05:06.3870505+00:00 ContainerStatus: Container is running.
+2026-08-30T07:05:06.3871708+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T07:05:06.4074997+00:00 ContainerStatus: Container start method finished after 1171 ms.
+2026-08-30T07:05:06.4076041+00:00 ContainerStatus: State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T07:05:06.4076349+00:00 ContainerStatus: State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-08-30T07:05:06.6181447+00:00 ContainerStream:    _____                               
+2026-08-30T07:05:06.6181703+00:00 ContainerStream:   /  _  \ __________ _________   ____  
+2026-08-30T07:05:06.6181754+00:00 ContainerStream:  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2026-08-30T07:05:06.6181794+00:00 ContainerStream: /    |    \/    /|  |  /|  | \/\  ___/ 
+2026-08-30T07:05:06.6185536+00:00 ContainerStream: \____|__  /_____ \____/ |__|    \___  >
+2026-08-30T07:05:06.6185585+00:00 ContainerStream:         \/      \/                  \/ 
+2026-08-30T07:05:06.6185604+00:00 ContainerStream: A P P   S E R V I C E   O N   L I N U X
+2026-08-30T07:05:06.6185617+00:00 ContainerStream: 
+2026-08-30T07:05:06.6185647+00:00 ContainerStream: Documentation    : http://aka.ms/webapp-linux
+2026-08-30T07:05:06.6185667+00:00 ContainerStream: NodeJS quickstart: https://aka.ms/node-qs
+2026-08-30T07:05:06.6185685+00:00 ContainerStream: NodeJS Version   : v20.20.2
+2026-08-30T07:05:06.6185703+00:00 ContainerStream: Instance Name    : lw0sdlwk0000PM
+2026-08-30T07:05:06.6185735+00:00 ContainerStream: Instance Id      : a9cebb550e254ba9270d015acd372767c78fa4f3f79fc353fb793f2912e673b3
+2026-08-30T07:05:06.6185748+00:00 ContainerStream: 
+2026-08-30T07:05:06.6185781+00:00 ContainerStream: Note: Any data outside '/home' is not persisted
+2026-08-30T07:05:10.8603856+00:00 ContainerStream: Starting OpenBSD Secure Shell server: sshd.
+2026-08-30T07:05:10.8808578+00:00 ContainerStream: WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-30T07:05:10.9200416+00:00 ContainerStream: Updating certificates in /etc/ssl/certs...
+2026-08-30T07:05:22.2130001+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_ECC_Root_CA_2022.pem
+2026-08-30T07:05:22.2140792+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_RSA_Root_CA_2022.pem
+2026-08-30T07:05:22.4023856+00:00 ContainerStream: rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2026-08-30T07:05:22.4543012+00:00 ContainerStream: 4 added, 0 removed; done.
+2026-08-30T07:05:22.4727394+00:00 ContainerStream: Running hooks in /etc/ca-certificates/update.d...
+2026-08-30T07:05:22.4727486+00:00 ContainerStream: done.
+2026-08-30T07:05:22.4835720+00:00 ContainerStream: CA certificates copied and updated successfully.
+2026-08-30T07:05:22.6025087+00:00 ContainerStream: Starting periodic command scheduler: cron.
+2026-08-30T07:05:22.7019288+00:00 ContainerStream: Could not find build manifest file at '/home/site/wwwroot/oryx-manifest.toml'
+2026-08-30T07:05:22.7019591+00:00 ContainerStream: Could not find operation ID in manifest. Generating an operation id...
+2026-08-30T07:05:22.7019609+00:00 ContainerStream: Build Operation ID: 19d57aa8-a813-48a1-9310-0f90fd2bdd71
+2026-08-30T07:05:23.5550523+00:00 ContainerStream: Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2026-08-30T07:05:23.6945601+00:00 ContainerStream: Writing output script to '/opt/startup/startup.sh'
+2026-08-30T07:05:23.8841187+00:00 ContainerStream: Running #!/bin/sh
+2026-08-30T07:05:23.8841446+00:00 ContainerStream: 
+2026-08-30T07:05:23.8841466+00:00 ContainerStream: # Enter the source directory to make sure the script runs where the user expects
+2026-08-30T07:05:23.8841482+00:00 ContainerStream: cd "/home/site/wwwroot"
+2026-08-30T07:05:23.8841495+00:00 ContainerStream: 
+2026-08-30T07:05:23.8841510+00:00 ContainerStream: export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2026-08-30T07:05:23.8841523+00:00 ContainerStream: if [ -z "$PORT" ]; then
+2026-08-30T07:05:23.8841536+00:00 ContainerStream: 		export PORT=8080
+2026-08-30T07:05:23.8841547+00:00 ContainerStream: fi
+2026-08-30T07:05:23.8841558+00:00 ContainerStream: 
+2026-08-30T07:05:23.8844795+00:00 ContainerStream: node /opt/startup/default-static-site.js
+2026-08-30T07:05:25.4503741+00:00 ContainerStatus: Site startup probe succeeded after 19.0423239 seconds.
+2026-08-30T07:05:25.5501408+00:00 ContainerStatus: State: Starting, Action: WarmUpProbeSucceeded, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Site startup probe succeeded after 19.0423239 seconds., DetailsLevel: INFO
+2026-08-30T07:05:25.7779097+00:00 ContainerStatus: Site started.
+2026-08-30T07:05:25.7782645+00:00 ContainerStatus: State: Started, Action: None, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Site started at 08/30/2026 07:05:25 (UTC), DetailsLevel: INFO
+2026-08-30T07:05:25.8090687+00:00 ContainerStatus: Site is running with patch version NODE-20.20.2
+========== New Cold Start Attempt (2026-08-30T07:22:27.9136578+00:00) ==========
+2026-08-30T07:22:27.9136578+00:00 ContainerStatus: State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T07:22:29.4172225+00:00 ContainerStatus: State: Starting, Action: StartingMsiContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T07:22:39.8156292+00:00 ContainerStatus: State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T07:22:39.8157032+00:00 ContainerStatus: Container start method called.
+2026-08-30T07:22:39.8159444+00:00 ContainerStatus: State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T07:22:39.8160136+00:00 ContainerStatus: Establishing network.
+2026-08-30T07:22:39.8161057+00:00 ContainerStatus: Pulling image: appsvc/node:20-lts_20260710.8.tuxprod.
+2026-08-30T07:22:40.0395894+00:00 ContainerStatus: Container is starting.
+2026-08-30T07:22:40.0478829+00:00 ContainerStatus: State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T07:22:40.0482127+00:00 ContainerStatus: Establishing user namespace if not established already.
+2026-08-30T07:22:40.0484125+00:00 ContainerStatus: Establishing network if not established already.
+2026-08-30T07:22:40.0487799+00:00 ContainerStatus: Mounting volumes.
+2026-08-30T07:22:40.0491129+00:00 ContainerStatus: Nested mountpoint site/wwwroot
+2026-08-30T07:22:40.0675317+00:00 ContainerStatus: Nested mountpoint volatile/logs
+2026-08-30T07:22:40.0777677+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:22:40.0783433+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:22:40.1086251+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:22:40.1672825+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:22:40.1683277+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:22:40.3872910+00:00 ContainerStatus: Skipping optional volume mount 'Package' at /home/site/wwwroot.
+2026-08-30T07:22:40.5185642+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for app-devopsapp-task5. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-08-30T07:22:40.5187841+00:00 ContainerStatus: Creating container.
+2026-08-30T07:22:40.5194446+00:00 ContainerStatus: Creating pipes for streaming container io.
+2026-08-30T07:22:40.5196379+00:00 ContainerStatus: Creating stdout named pipe at /podr/container/pipe/c84332349739_app-devopsapp-task5/stdout_1fe0f6d97aef447881af75e8df2b4c5b.
+2026-08-30T07:22:40.5284960+00:00 ContainerStatus: Successfully created stdout named pipe at: /podr/container/pipe/c84332349739_app-devopsapp-task5/stdout_1fe0f6d97aef447881af75e8df2b4c5b.
+2026-08-30T07:22:40.5287449+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/c84332349739_app-devopsapp-task5/stdout_1fe0f6d97aef447881af75e8df2b4c5b for reading in non-blocking mode.
+2026-08-30T07:22:40.5289596+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/c84332349739_app-devopsapp-task5/stdout_1fe0f6d97aef447881af75e8df2b4c5b.
+2026-08-30T07:22:40.5294208+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/c84332349739_app-devopsapp-task5/stdout_1fe0f6d97aef447881af75e8df2b4c5b.
+2026-08-30T07:22:40.5299048+00:00 ContainerStatus: Creating stderr named pipe at /podr/container/pipe/c84332349739_app-devopsapp-task5/stderr_3f0c44d4e81740ba87f85a4ca826b77c.
+2026-08-30T07:22:40.5379839+00:00 ContainerStatus: Successfully created stderr named pipe at: /podr/container/pipe/c84332349739_app-devopsapp-task5/stderr_3f0c44d4e81740ba87f85a4ca826b77c.
+2026-08-30T07:22:40.5380633+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/c84332349739_app-devopsapp-task5/stderr_3f0c44d4e81740ba87f85a4ca826b77c for reading in non-blocking mode.
+2026-08-30T07:22:40.5381237+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/c84332349739_app-devopsapp-task5/stderr_3f0c44d4e81740ba87f85a4ca826b77c.
+2026-08-30T07:22:40.5382777+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/c84332349739_app-devopsapp-task5/stderr_3f0c44d4e81740ba87f85a4ca826b77c.
+2026-08-30T07:22:40.5383725+00:00 ContainerStatus: Creating container with image: appsvc/node:20-lts_20260710.8.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod
+2026-08-30T07:22:41.0923702+00:00 ContainerStatus: Starting container: c84332349739_app-devopsapp-task5.
+2026-08-30T07:22:41.1615649+00:00 ContainerStatus: Starting watchers and probes.
+2026-08-30T07:22:41.1617055+00:00 ContainerStatus: Starting metrics collection.
+2026-08-30T07:22:41.1617485+00:00 ContainerStatus: Container is running.
+2026-08-30T07:22:41.1617958+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T07:22:41.2607252+00:00 ContainerStatus: Container start method finished after 1444 ms.
+2026-08-30T07:22:41.2608425+00:00 ContainerStatus: State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T07:22:41.2608757+00:00 ContainerStatus: State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-08-30T07:22:41.6232568+00:00 ContainerStream:    _____                               
+2026-08-30T07:22:41.6509305+00:00 ContainerStream:   /  _  \ __________ _________   ____  
+2026-08-30T07:22:41.6509425+00:00 ContainerStream:  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2026-08-30T07:22:41.6509447+00:00 ContainerStream: /    |    \/    /|  |  /|  | \/\  ___/ 
+2026-08-30T07:22:41.6509465+00:00 ContainerStream: \____|__  /_____ \____/ |__|    \___  >
+2026-08-30T07:22:41.6509482+00:00 ContainerStream:         \/      \/                  \/ 
+2026-08-30T07:22:41.6509534+00:00 ContainerStream: A P P   S E R V I C E   O N   L I N U X
+2026-08-30T07:22:41.6509553+00:00 ContainerStream: 
+2026-08-30T07:22:41.6509574+00:00 ContainerStream: Documentation    : http://aka.ms/webapp-linux
+2026-08-30T07:22:41.6509605+00:00 ContainerStream: NodeJS quickstart: https://aka.ms/node-qs
+2026-08-30T07:22:41.6509628+00:00 ContainerStream: NodeJS Version   : v20.20.2
+2026-08-30T07:22:41.6509646+00:00 ContainerStream: Instance Name    : lw0sdlwk0000PM
+2026-08-30T07:22:41.6510852+00:00 ContainerStream: Instance Id      : a9cebb550e254ba9270d015acd372767c78fa4f3f79fc353fb793f2912e673b3
+2026-08-30T07:22:41.6510891+00:00 ContainerStream: 
+2026-08-30T07:22:41.6510909+00:00 ContainerStream: Note: Any data outside '/home' is not persisted
+2026-08-30T07:22:46.4536606+00:00 ContainerStream: Starting OpenBSD Secure Shell server: sshd.
+2026-08-30T07:22:46.4656839+00:00 ContainerStream: WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-30T07:22:46.5134960+00:00 ContainerStream: Updating certificates in /etc/ssl/certs...
+2026-08-30T07:22:57.2672682+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_ECC_Root_CA_2022.pem
+2026-08-30T07:22:57.2776291+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_RSA_Root_CA_2022.pem
+2026-08-30T07:22:57.5086250+00:00 ContainerStream: rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2026-08-30T07:22:57.5476976+00:00 ContainerStream: 4 added, 0 removed; done.
+2026-08-30T07:22:57.5584939+00:00 ContainerStream: Running hooks in /etc/ca-certificates/update.d...
+2026-08-30T07:22:57.5668970+00:00 ContainerStream: done.
+2026-08-30T07:22:57.6186784+00:00 ContainerStream: CA certificates copied and updated successfully.
+2026-08-30T07:22:57.8188372+00:00 ContainerStream: Starting periodic command scheduler: cron.
+2026-08-30T07:22:58.0171784+00:00 ContainerStream: Could not find build manifest file at '/home/site/wwwroot/oryx-manifest.toml'
+2026-08-30T07:22:58.0481145+00:00 ContainerStream: Could not find operation ID in manifest. Generating an operation id...
+2026-08-30T07:22:58.0486464+00:00 ContainerStream: Build Operation ID: b1c4e406-cd6f-4a1f-adaa-c5b2c1a538e0
+2026-08-30T07:22:58.8662121+00:00 ContainerStream: Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2026-08-30T07:22:59.0066419+00:00 ContainerStream: Writing output script to '/opt/startup/startup.sh'
+2026-08-30T07:22:59.2282742+00:00 ContainerStream: Running #!/bin/sh
+2026-08-30T07:22:59.2283038+00:00 ContainerStream: 
+2026-08-30T07:22:59.2283069+00:00 ContainerStream: # Enter the source directory to make sure the script runs where the user expects
+2026-08-30T07:22:59.2283092+00:00 ContainerStream: cd "/home/site/wwwroot"
+2026-08-30T07:22:59.2283106+00:00 ContainerStream: 
+2026-08-30T07:22:59.2283126+00:00 ContainerStream: export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2026-08-30T07:22:59.2283202+00:00 ContainerStream: if [ -z "$PORT" ]; then
+2026-08-30T07:22:59.2283275+00:00 ContainerStream: 		export PORT=8080
+2026-08-30T07:22:59.2283289+00:00 ContainerStream: fi
+2026-08-30T07:22:59.2283301+00:00 ContainerStream: 
+2026-08-30T07:22:59.2290335+00:00 ContainerStream: node /opt/startup/default-static-site.js
+2026-08-30T07:23:01.3108638+00:00 ContainerStatus: Site startup probe succeeded after 20.0427855 seconds.
+2026-08-30T07:23:01.4405874+00:00 ContainerStatus: State: Starting, Action: WarmUpProbeSucceeded, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site startup probe succeeded after 20.0427855 seconds., DetailsLevel: INFO
+2026-08-30T07:23:01.7152881+00:00 ContainerStatus: Site started.
+2026-08-30T07:23:01.7227308+00:00 ContainerStatus: State: Started, Action: None, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 08/30/2026 07:23:01 (UTC), DetailsLevel: INFO
+2026-08-30T07:23:01.7233486+00:00 ContainerStatus: Site is running with patch version NODE-20.20.2
+========== New Cold Start Attempt (2026-08-30T07:23:21.8466263+00:00) ==========
+2026-08-30T07:23:21.8466263+00:00 ContainerStatus: State: Stopping, Action: StoppingSite, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Site started at 08/30/2026 07:05:25 (UTC), DetailsLevel: INFO
+2026-08-30T07:23:21.8472469+00:00 ContainerStatus: State: Stopping, Action: StoppingSiteContainers, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Site started at 08/30/2026 07:05:25 (UTC), DetailsLevel: INFO
+2026-08-30T07:23:21.8472994+00:00 ContainerStatus: Container is terminating. Grace period: 5 seconds.
+2026-08-30T07:23:21.8683374+00:00 ContainerStatus: Stop and delete container. Retry count = 0
+2026-08-30T07:23:21.8684854+00:00 ContainerStatus: Stopping container: 1f6a845d0a55_app-devopsapp-task5.
+2026-08-30T07:23:26.9462296+00:00 ContainerStatus: Deleting container: 1f6a845d0a55_app-devopsapp-task5. Retry count = 0
+2026-08-30T07:23:27.1259405+00:00 ContainerStatus: Container spec TerminationMessagePolicy  path 
+2026-08-30T07:23:27.1263974+00:00 ContainerStatus: Container is terminated. Total time elapsed: 5279 ms.
+2026-08-30T07:23:27.4678603+00:00 ContainerStatus: Site: app-devopsapp-task5 stopped.
+2026-08-30T07:23:36.0048646+00:00 ContainerStatus: State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T07:23:37.2851119+00:00 ContainerStatus: State: Starting, Action: StartingMsiContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T07:23:47.0399531+00:00 ContainerStatus: State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T07:23:47.0401905+00:00 ContainerStatus: Container start method called.
+2026-08-30T07:23:47.0403071+00:00 ContainerStatus: State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T07:23:47.0406030+00:00 ContainerStatus: Establishing network.
+2026-08-30T07:23:47.0412098+00:00 ContainerStatus: Pulling image: appsvc/node:20-lts_20260710.8.tuxprod.
+2026-08-30T07:23:47.3201187+00:00 ContainerStatus: Container is starting.
+2026-08-30T07:23:47.3203823+00:00 ContainerStatus: State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T07:23:47.3204439+00:00 ContainerStatus: Establishing user namespace if not established already.
+2026-08-30T07:23:47.3205001+00:00 ContainerStatus: Establishing network if not established already.
+2026-08-30T07:23:47.3205553+00:00 ContainerStatus: Mounting volumes.
+2026-08-30T07:23:47.3206388+00:00 ContainerStatus: Nested mountpoint site/wwwroot
+2026-08-30T07:23:47.3299861+00:00 ContainerStatus: Nested mountpoint volatile/logs
+2026-08-30T07:23:47.3321479+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:23:47.3323552+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:23:47.4117368+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:23:47.4322995+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:23:47.4419171+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:23:47.6477162+00:00 ContainerStatus: Skipping optional volume mount 'Package' at /home/site/wwwroot.
+2026-08-30T07:23:47.8134941+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for app-devopsapp-task5. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-08-30T07:23:47.8227877+00:00 ContainerStatus: Creating container.
+2026-08-30T07:23:47.8230112+00:00 ContainerStatus: Creating pipes for streaming container io.
+2026-08-30T07:23:47.8232753+00:00 ContainerStatus: Creating stdout named pipe at /podr/container/pipe/433ed7481c55_app-devopsapp-task5/stdout_07eb61f15b7743c3a29634f3722dad94.
+2026-08-30T07:23:47.8306431+00:00 ContainerStatus: Successfully created stdout named pipe at: /podr/container/pipe/433ed7481c55_app-devopsapp-task5/stdout_07eb61f15b7743c3a29634f3722dad94.
+2026-08-30T07:23:47.8309634+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/433ed7481c55_app-devopsapp-task5/stdout_07eb61f15b7743c3a29634f3722dad94 for reading in non-blocking mode.
+2026-08-30T07:23:47.8312538+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/433ed7481c55_app-devopsapp-task5/stdout_07eb61f15b7743c3a29634f3722dad94.
+2026-08-30T07:23:47.8313028+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/433ed7481c55_app-devopsapp-task5/stdout_07eb61f15b7743c3a29634f3722dad94.
+2026-08-30T07:23:47.8319733+00:00 ContainerStatus: Creating stderr named pipe at /podr/container/pipe/433ed7481c55_app-devopsapp-task5/stderr_ded716cb27d34129a5afe1abfae877c8.
+2026-08-30T07:23:47.8321778+00:00 ContainerStatus: Successfully created stderr named pipe at: /podr/container/pipe/433ed7481c55_app-devopsapp-task5/stderr_ded716cb27d34129a5afe1abfae877c8.
+2026-08-30T07:23:47.8322196+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/433ed7481c55_app-devopsapp-task5/stderr_ded716cb27d34129a5afe1abfae877c8 for reading in non-blocking mode.
+2026-08-30T07:23:47.8333783+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/433ed7481c55_app-devopsapp-task5/stderr_ded716cb27d34129a5afe1abfae877c8.
+2026-08-30T07:23:47.8334318+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/433ed7481c55_app-devopsapp-task5/stderr_ded716cb27d34129a5afe1abfae877c8.
+2026-08-30T07:23:47.8418519+00:00 ContainerStatus: Creating container with image: appsvc/node:20-lts_20260710.8.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod
+2026-08-30T07:23:48.4465041+00:00 ContainerStatus: Starting container: 433ed7481c55_app-devopsapp-task5.
+2026-08-30T07:23:48.5114493+00:00 ContainerStatus: Starting watchers and probes.
+2026-08-30T07:23:48.5118545+00:00 ContainerStatus: Starting metrics collection.
+2026-08-30T07:23:48.5123199+00:00 ContainerStatus: Container is running.
+2026-08-30T07:23:48.5123822+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T07:23:48.6704307+00:00 ContainerStatus: Container start method finished after 1602 ms.
+2026-08-30T07:23:48.6705668+00:00 ContainerStatus: State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T07:23:48.6705971+00:00 ContainerStatus: State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-08-30T07:23:48.8117314+00:00 ContainerStream:    _____                               
+2026-08-30T07:23:48.8128061+00:00 ContainerStream:   /  _  \ __________ _________   ____  
+2026-08-30T07:23:48.8128144+00:00 ContainerStream:  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2026-08-30T07:23:48.8128159+00:00 ContainerStream: /    |    \/    /|  |  /|  | \/\  ___/ 
+2026-08-30T07:23:48.8128173+00:00 ContainerStream: \____|__  /_____ \____/ |__|    \___  >
+2026-08-30T07:23:48.8128191+00:00 ContainerStream:         \/      \/                  \/ 
+2026-08-30T07:23:48.8128205+00:00 ContainerStream: A P P   S E R V I C E   O N   L I N U X
+2026-08-30T07:23:48.8128218+00:00 ContainerStream: 
+2026-08-30T07:23:48.8128237+00:00 ContainerStream: Documentation    : http://aka.ms/webapp-linux
+2026-08-30T07:23:48.8128266+00:00 ContainerStream: NodeJS quickstart: https://aka.ms/node-qs
+2026-08-30T07:23:48.8128281+00:00 ContainerStream: NodeJS Version   : v20.20.2
+2026-08-30T07:23:48.8128296+00:00 ContainerStream: Instance Name    : lw0sdlwk0000PM
+2026-08-30T07:23:48.8128316+00:00 ContainerStream: Instance Id      : a9cebb550e254ba9270d015acd372767c78fa4f3f79fc353fb793f2912e673b3
+2026-08-30T07:23:48.8128329+00:00 ContainerStream: 
+2026-08-30T07:23:48.8128344+00:00 ContainerStream: Note: Any data outside '/home' is not persisted
+2026-08-30T07:23:50.4114796+00:00 ContainerStream: Starting OpenBSD Secure Shell server: sshd.
+2026-08-30T07:23:50.4222866+00:00 ContainerStream: WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-30T07:23:50.4607613+00:00 ContainerStream: Updating certificates in /etc/ssl/certs...
+2026-08-30T07:24:04.2561107+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_ECC_Root_CA_2022.pem
+2026-08-30T07:24:04.2561423+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_RSA_Root_CA_2022.pem
+2026-08-30T07:24:04.8456605+00:00 ContainerStream: rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2026-08-30T07:24:04.8861029+00:00 ContainerStream: 4 added, 0 removed; done.
+2026-08-30T07:24:04.8869155+00:00 ContainerStream: Running hooks in /etc/ca-certificates/update.d...
+2026-08-30T07:24:04.8965771+00:00 ContainerStream: done.
+2026-08-30T07:24:04.9166524+00:00 ContainerStream: CA certificates copied and updated successfully.
+2026-08-30T07:24:05.1079695+00:00 ContainerStream: Starting periodic command scheduler: cron.
+2026-08-30T07:24:05.2277729+00:00 ContainerStream: Could not find build manifest file at '/home/site/wwwroot/oryx-manifest.toml'
+2026-08-30T07:24:05.2278833+00:00 ContainerStream: Could not find operation ID in manifest. Generating an operation id...
+2026-08-30T07:24:05.2282854+00:00 ContainerStream: Build Operation ID: 097b3ba2-87e1-40b2-af17-4ede18086f17
+2026-08-30T07:24:06.1482803+00:00 ContainerStream: Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2026-08-30T07:24:06.3061323+00:00 ContainerStream: Writing output script to '/opt/startup/startup.sh'
+2026-08-30T07:24:06.4885699+00:00 ContainerStream: Running #!/bin/sh
+2026-08-30T07:24:06.4885922+00:00 ContainerStream: 
+2026-08-30T07:24:06.4885948+00:00 ContainerStream: # Enter the source directory to make sure the script runs where the user expects
+2026-08-30T07:24:06.4885996+00:00 ContainerStream: cd "/home/site/wwwroot"
+2026-08-30T07:24:06.4886010+00:00 ContainerStream: 
+2026-08-30T07:24:06.4886026+00:00 ContainerStream: export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2026-08-30T07:24:06.4886041+00:00 ContainerStream: if [ -z "$PORT" ]; then
+2026-08-30T07:24:06.4886055+00:00 ContainerStream: 		export PORT=8080
+2026-08-30T07:24:06.4886068+00:00 ContainerStream: fi
+2026-08-30T07:24:06.4886081+00:00 ContainerStream: 
+2026-08-30T07:24:06.4982343+00:00 ContainerStream: node /opt/startup/default-static-site.js
+2026-08-30T07:24:07.7115261+00:00 ContainerStatus: Site startup probe succeeded after 19.0406002 seconds.
+2026-08-30T07:24:07.8191588+00:00 ContainerStatus: State: Starting, Action: WarmUpProbeSucceeded, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site startup probe succeeded after 19.0406002 seconds., DetailsLevel: INFO
+2026-08-30T07:24:07.9607670+00:00 ContainerStatus: Site started.
+2026-08-30T07:24:07.9609163+00:00 ContainerStatus: State: Started, Action: None, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 08/30/2026 07:24:07 (UTC), DetailsLevel: INFO
+2026-08-30T07:24:07.9610632+00:00 ContainerStatus: Site is running with patch version NODE-20.20.2
+========== New Cold Start Attempt (2026-08-30T07:36:34.1701212+00:00) ==========
+2026-08-30T07:36:34.1701212+00:00 ContainerStatus: State: Stopping, Action: UnmountingVolumes, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: , DetailsLevel: ERR
+2026-08-30T07:36:34.3221180+00:00 ContainerStatus: State: Stopping, Action: StoppingSiteNetworks, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: , DetailsLevel: ERR
+2026-08-30T07:36:34.4309685+00:00 ContainerStatus: State: Stopped, Action: None, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 07:36:34 (UTC), DetailsLevel: ERR
+2026-08-30T07:36:54.6062143+00:00 ContainerStatus: State: Stopping, Action: StoppingSiteContainers, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 06:59:52, LastErrorDetails: There was an issue setting up VNet., Details: Site started at 08/30/2026 07:24:07 (UTC), DetailsLevel: INFO
+2026-08-30T07:36:54.6063796+00:00 ContainerStatus: Container is terminating. Grace period: 5 seconds.
+2026-08-30T07:36:54.6215942+00:00 ContainerStatus: Stop and delete container. Retry count = 0
+2026-08-30T07:36:54.6219911+00:00 ContainerStatus: Stopping container: 433ed7481c55_app-devopsapp-task5.
+2026-08-30T07:36:59.7068899+00:00 ContainerStatus: Deleting container: 433ed7481c55_app-devopsapp-task5. Retry count = 0
+2026-08-30T07:36:59.8954917+00:00 ContainerStatus: Container spec TerminationMessagePolicy  path 
+2026-08-30T07:36:59.8961703+00:00 ContainerStatus: Container is terminated. Total time elapsed: 5289 ms.
+2026-08-30T07:37:00.1386355+00:00 ContainerStatus: Site: app-devopsapp-task5 stopped.
+2026-08-30T07:41:31.3092549+00:00 ContainerStatus: State: Starting, Action: EstablishingSiteNetworks, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 07:36:34 (UTC), DetailsLevel: ERR
+2026-08-30T07:41:36.2654058+00:00 ContainerStatus: State: Starting, Action: StartingMsiContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 07:36:34 (UTC), DetailsLevel: ERR
+2026-08-30T07:41:45.0072892+00:00 ContainerStatus: State: Starting, Action: StartingSiteContainers, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 07:36:34 (UTC), DetailsLevel: ERR
+2026-08-30T07:41:45.0074543+00:00 ContainerStatus: Container start method called.
+2026-08-30T07:41:45.0076977+00:00 ContainerStatus: State: Starting, Action: PullingImage, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Pulling image 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T07:41:45.0079753+00:00 ContainerStatus: Establishing network.
+2026-08-30T07:41:45.0082607+00:00 ContainerStatus: Pulling image: appsvc/node:20-lts_20260710.8.tuxprod.
+2026-08-30T07:41:45.2426865+00:00 ContainerStatus: Container is starting.
+2026-08-30T07:41:45.2427325+00:00 ContainerStatus: State: Starting, Action: MountingVolumes, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Mounting volumes for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T07:41:45.2427583+00:00 ContainerStatus: Establishing user namespace if not established already.
+2026-08-30T07:41:45.2427846+00:00 ContainerStatus: Establishing network if not established already.
+2026-08-30T07:41:45.2428192+00:00 ContainerStatus: Mounting volumes.
+2026-08-30T07:41:45.2428786+00:00 ContainerStatus: Nested mountpoint site/wwwroot
+2026-08-30T07:41:45.2621588+00:00 ContainerStatus: Nested mountpoint volatile/logs
+2026-08-30T07:41:45.3437914+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:41:45.3516231+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:41:45.3535567+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:41:45.3821702+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:41:45.3835793+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T07:41:45.6522088+00:00 ContainerStatus: Skipping optional volume mount 'Package' at /home/site/wwwroot.
+2026-08-30T07:41:45.6525759+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Finished pulling container image and mounting volumes for app-devopsapp-task5. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-08-30T07:41:45.6528945+00:00 ContainerStatus: Creating container.
+2026-08-30T07:41:45.6531602+00:00 ContainerStatus: Creating pipes for streaming container io.
+2026-08-30T07:41:45.6533247+00:00 ContainerStatus: Creating stdout named pipe at /podr/container/pipe/60cdf73d4fa0_app-devopsapp-task5/stdout_60229ffc904840d3a757ac9207c28220.
+2026-08-30T07:41:45.6534214+00:00 ContainerStatus: Successfully created stdout named pipe at: /podr/container/pipe/60cdf73d4fa0_app-devopsapp-task5/stdout_60229ffc904840d3a757ac9207c28220.
+2026-08-30T07:41:45.6534521+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/60cdf73d4fa0_app-devopsapp-task5/stdout_60229ffc904840d3a757ac9207c28220 for reading in non-blocking mode.
+2026-08-30T07:41:45.6534839+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/60cdf73d4fa0_app-devopsapp-task5/stdout_60229ffc904840d3a757ac9207c28220.
+2026-08-30T07:41:45.6535079+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/60cdf73d4fa0_app-devopsapp-task5/stdout_60229ffc904840d3a757ac9207c28220.
+2026-08-30T07:41:45.6535530+00:00 ContainerStatus: Creating stderr named pipe at /podr/container/pipe/60cdf73d4fa0_app-devopsapp-task5/stderr_3777a96a165b41a98bfb25cfcb4bdfc7.
+2026-08-30T07:41:45.6535961+00:00 ContainerStatus: Successfully created stderr named pipe at: /podr/container/pipe/60cdf73d4fa0_app-devopsapp-task5/stderr_3777a96a165b41a98bfb25cfcb4bdfc7.
+2026-08-30T07:41:45.6536207+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/60cdf73d4fa0_app-devopsapp-task5/stderr_3777a96a165b41a98bfb25cfcb4bdfc7 for reading in non-blocking mode.
+2026-08-30T07:41:45.6536478+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/60cdf73d4fa0_app-devopsapp-task5/stderr_3777a96a165b41a98bfb25cfcb4bdfc7.
+2026-08-30T07:41:45.6536718+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/60cdf73d4fa0_app-devopsapp-task5/stderr_3777a96a165b41a98bfb25cfcb4bdfc7.
+2026-08-30T07:41:45.6537079+00:00 ContainerStatus: Overriding PORT environment variable with pre-calculated port: 8080.
+2026-08-30T07:41:45.6537297+00:00 ContainerStatus: Setting value of PORT variable to 8080
+2026-08-30T07:41:45.6538275+00:00 ContainerStatus: Creating container with image: appsvc/node:20-lts_20260710.8.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod
+2026-08-30T07:41:45.9479553+00:00 ContainerStatus: Starting container: 60cdf73d4fa0_app-devopsapp-task5.
+2026-08-30T07:41:46.0041422+00:00 ContainerStatus: Starting watchers and probes.
+2026-08-30T07:41:46.0044209+00:00 ContainerStatus: Starting metrics collection.
+2026-08-30T07:41:46.0122557+00:00 ContainerStatus: Container is running.
+2026-08-30T07:41:46.0126840+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T07:41:46.1338586+00:00 ContainerStatus: Container start method finished after 1126 ms.
+2026-08-30T07:41:46.1339328+00:00 ContainerStatus: State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T07:41:46.1339448+00:00 ContainerStatus: State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-08-30T07:41:46.3624978+00:00 ContainerStream:    _____                               
+2026-08-30T07:41:46.3625208+00:00 ContainerStream:   /  _  \ __________ _________   ____  
+2026-08-30T07:41:46.3625223+00:00 ContainerStream:  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2026-08-30T07:41:46.3625234+00:00 ContainerStream: /    |    \/    /|  |  /|  | \/\  ___/ 
+2026-08-30T07:41:46.3625245+00:00 ContainerStream: \____|__  /_____ \____/ |__|    \___  >
+2026-08-30T07:41:46.3625260+00:00 ContainerStream:         \/      \/                  \/ 
+2026-08-30T07:41:46.3625278+00:00 ContainerStream: A P P   S E R V I C E   O N   L I N U X
+2026-08-30T07:41:46.3625291+00:00 ContainerStream: 
+2026-08-30T07:41:46.3625346+00:00 ContainerStream: Documentation    : http://aka.ms/webapp-linux
+2026-08-30T07:41:46.3625361+00:00 ContainerStream: NodeJS quickstart: https://aka.ms/node-qs
+2026-08-30T07:41:46.3625372+00:00 ContainerStream: NodeJS Version   : v20.20.2
+2026-08-30T07:41:46.3625385+00:00 ContainerStream: Instance Name    : lw0sdlwk0000PM
+2026-08-30T07:41:46.3625400+00:00 ContainerStream: Instance Id      : a9cebb550e254ba9270d015acd372767c78fa4f3f79fc353fb793f2912e673b3
+2026-08-30T07:41:46.3625490+00:00 ContainerStream: 
+2026-08-30T07:41:46.3625516+00:00 ContainerStream: Note: Any data outside '/home' is not persisted
+2026-08-30T07:41:50.0251001+00:00 ContainerStream: Starting OpenBSD Secure Shell server: sshd.
+2026-08-30T07:41:50.0356149+00:00 ContainerStream: WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-30T07:41:50.0654049+00:00 ContainerStream: Updating certificates in /etc/ssl/certs...
+2026-08-30T07:42:02.0094890+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_ECC_Root_CA_2022.pem
+2026-08-30T07:42:02.0099317+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_RSA_Root_CA_2022.pem
+2026-08-30T07:42:02.7095259+00:00 ContainerStream: rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2026-08-30T07:42:02.8798293+00:00 ContainerStream: 4 added, 0 removed; done.
+2026-08-30T07:42:02.8804192+00:00 ContainerStream: Running hooks in /etc/ca-certificates/update.d...
+2026-08-30T07:42:02.9103365+00:00 ContainerStream: done.
+2026-08-30T07:42:02.9589006+00:00 ContainerStream: CA certificates copied and updated successfully.
+2026-08-30T07:42:03.2198652+00:00 ContainerStream: Starting periodic command scheduler: cron.
+2026-08-30T07:42:03.4200102+00:00 ContainerStream: Could not find build manifest file at '/home/site/wwwroot/oryx-manifest.toml'
+2026-08-30T07:42:03.4203698+00:00 ContainerStream: Could not find operation ID in manifest. Generating an operation id...
+2026-08-30T07:42:03.4209077+00:00 ContainerStream: Build Operation ID: 43da977c-4bfa-414e-93bb-8964de6ea103
+2026-08-30T07:42:05.1815456+00:00 ContainerStream: Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2026-08-30T07:42:05.3288408+00:00 ContainerStream: Writing output script to '/opt/startup/startup.sh'
+2026-08-30T07:42:05.5199011+00:00 ContainerStream: Running #!/bin/sh
+2026-08-30T07:42:05.5199362+00:00 ContainerStream: 
+2026-08-30T07:42:05.5199382+00:00 ContainerStream: # Enter the source directory to make sure the script runs where the user expects
+2026-08-30T07:42:05.5199394+00:00 ContainerStream: cd "/home/site/wwwroot"
+2026-08-30T07:42:05.5199404+00:00 ContainerStream: 
+2026-08-30T07:42:05.5199418+00:00 ContainerStream: export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2026-08-30T07:42:05.5199430+00:00 ContainerStream: if [ -z "$PORT" ]; then
+2026-08-30T07:42:05.5199446+00:00 ContainerStream: 		export PORT=8080
+2026-08-30T07:42:05.5199456+00:00 ContainerStream: fi
+2026-08-30T07:42:05.5199465+00:00 ContainerStream: 
+2026-08-30T07:42:05.5214700+00:00 ContainerStream: node /opt/startup/default-static-site.js
+2026-08-30T07:42:07.1780990+00:00 ContainerStatus: Site startup probe succeeded after 21.0439433 seconds.
+2026-08-30T07:42:07.2762907+00:00 ContainerStatus: State: Starting, Action: WarmUpProbeSucceeded, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Site startup probe succeeded after 21.0439433 seconds., DetailsLevel: INFO
+2026-08-30T07:42:07.5086779+00:00 ContainerStatus: Site started.
+2026-08-30T07:42:07.5088463+00:00 ContainerStatus: State: Started, Action: None, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Site started at 08/30/2026 07:42:07 (UTC), DetailsLevel: INFO
+2026-08-30T07:42:07.5109052+00:00 ContainerStatus: Site is running with patch version NODE-20.20.2
+========== New Cold Start Attempt (2026-08-30T09:34:58.4512066+00:00) ==========
+2026-08-30T09:34:58.4512066+00:00 ContainerStatus: State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T09:35:00.5554948+00:00 ContainerStatus: State: Starting, Action: StartingMsiContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T09:35:10.4810389+00:00 ContainerStatus: State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T09:35:10.4811183+00:00 ContainerStatus: Container start method called.
+2026-08-30T09:35:10.4811604+00:00 ContainerStatus: State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.4:13209/appsvc/node:20-lts_20260710.8.tuxprod for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T09:35:10.4812063+00:00 ContainerStatus: Establishing network.
+2026-08-30T09:35:10.4812568+00:00 ContainerStatus: Pulling image: appsvc/node:20-lts_20260710.8.tuxprod.
+2026-08-30T09:35:10.7012815+00:00 ContainerStatus: Container is starting.
+2026-08-30T09:35:10.7013497+00:00 ContainerStatus: State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T09:35:10.7013770+00:00 ContainerStatus: Establishing user namespace if not established already.
+2026-08-30T09:35:10.7014010+00:00 ContainerStatus: Establishing network if not established already.
+2026-08-30T09:35:10.7014335+00:00 ContainerStatus: Mounting volumes.
+2026-08-30T09:35:10.7014879+00:00 ContainerStatus: Nested mountpoint site/wwwroot
+2026-08-30T09:35:10.7132529+00:00 ContainerStatus: Nested mountpoint volatile/logs
+2026-08-30T09:35:10.7909133+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:35:10.8110574+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:35:10.8220534+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:35:10.8222882+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:35:10.8228878+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:35:11.0644085+00:00 ContainerStatus: Skipping optional volume mount 'Package' at /home/site/wwwroot.
+2026-08-30T09:35:11.1751422+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for app-devopsapp-task5. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-08-30T09:35:11.1824727+00:00 ContainerStatus: Creating container.
+2026-08-30T09:35:11.1830089+00:00 ContainerStatus: Creating pipes for streaming container io.
+2026-08-30T09:35:11.1830813+00:00 ContainerStatus: Creating stdout named pipe at /podr/container/pipe/674c7641285d_app-devopsapp-task5/stdout_cfdf7a2bea574b9d987d6fba87939d60.
+2026-08-30T09:35:11.1831601+00:00 ContainerStatus: Successfully created stdout named pipe at: /podr/container/pipe/674c7641285d_app-devopsapp-task5/stdout_cfdf7a2bea574b9d987d6fba87939d60.
+2026-08-30T09:35:11.1831846+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/674c7641285d_app-devopsapp-task5/stdout_cfdf7a2bea574b9d987d6fba87939d60 for reading in non-blocking mode.
+2026-08-30T09:35:11.1840541+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/674c7641285d_app-devopsapp-task5/stdout_cfdf7a2bea574b9d987d6fba87939d60.
+2026-08-30T09:35:11.1842627+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/674c7641285d_app-devopsapp-task5/stdout_cfdf7a2bea574b9d987d6fba87939d60.
+2026-08-30T09:35:11.1921027+00:00 ContainerStatus: Creating stderr named pipe at /podr/container/pipe/674c7641285d_app-devopsapp-task5/stderr_5e2b8a9019a94d99b5dea6841e9f4b45.
+2026-08-30T09:35:11.1924711+00:00 ContainerStatus: Successfully created stderr named pipe at: /podr/container/pipe/674c7641285d_app-devopsapp-task5/stderr_5e2b8a9019a94d99b5dea6841e9f4b45.
+2026-08-30T09:35:11.1926415+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/674c7641285d_app-devopsapp-task5/stderr_5e2b8a9019a94d99b5dea6841e9f4b45 for reading in non-blocking mode.
+2026-08-30T09:35:11.1928828+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/674c7641285d_app-devopsapp-task5/stderr_5e2b8a9019a94d99b5dea6841e9f4b45.
+2026-08-30T09:35:11.1930586+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/674c7641285d_app-devopsapp-task5/stderr_5e2b8a9019a94d99b5dea6841e9f4b45.
+2026-08-30T09:35:11.1932092+00:00 ContainerStatus: Creating container with image: appsvc/node:20-lts_20260710.8.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/node:20-lts_20260710.8.tuxprod
+2026-08-30T09:35:11.4936304+00:00 ContainerStatus: Starting container: 674c7641285d_app-devopsapp-task5.
+2026-08-30T09:35:11.5254972+00:00 ContainerStatus: Starting watchers and probes.
+2026-08-30T09:35:11.5333527+00:00 ContainerStatus: Starting metrics collection.
+2026-08-30T09:35:11.5335143+00:00 ContainerStatus: Container is running.
+2026-08-30T09:35:11.5336306+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T09:35:11.5939421+00:00 ContainerStatus: Container start method finished after 1112 ms.
+2026-08-30T09:35:11.5940514+00:00 ContainerStatus: State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T09:35:11.5940622+00:00 ContainerStatus: State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-08-30T09:35:11.8344942+00:00 ContainerStream:    _____                               
+2026-08-30T09:35:11.8347280+00:00 ContainerStream:   /  _  \ __________ _________   ____  
+2026-08-30T09:35:11.8347389+00:00 ContainerStream:  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2026-08-30T09:35:11.8347447+00:00 ContainerStream: /    |    \/    /|  |  /|  | \/\  ___/ 
+2026-08-30T09:35:11.8347509+00:00 ContainerStream: \____|__  /_____ \____/ |__|    \___  >
+2026-08-30T09:35:11.8347656+00:00 ContainerStream:         \/      \/                  \/ 
+2026-08-30T09:35:11.8347725+00:00 ContainerStream: A P P   S E R V I C E   O N   L I N U X
+2026-08-30T09:35:11.8347780+00:00 ContainerStream: 
+2026-08-30T09:35:11.8347855+00:00 ContainerStream: Documentation    : http://aka.ms/webapp-linux
+2026-08-30T09:35:11.8347923+00:00 ContainerStream: NodeJS quickstart: https://aka.ms/node-qs
+2026-08-30T09:35:11.8347984+00:00 ContainerStream: NodeJS Version   : v20.20.2
+2026-08-30T09:35:11.8348047+00:00 ContainerStream: Instance Name    : lw0sdlwk0000PM
+2026-08-30T09:35:11.8348126+00:00 ContainerStream: Instance Id      : a9cebb550e254ba9270d015acd372767c78fa4f3f79fc353fb793f2912e673b3
+2026-08-30T09:35:11.8348223+00:00 ContainerStream: 
+2026-08-30T09:35:11.8348248+00:00 ContainerStream: Note: Any data outside '/home' is not persisted
+2026-08-30T09:35:13.8582417+00:00 ContainerStream: Starting OpenBSD Secure Shell server: sshd.
+2026-08-30T09:35:13.8704078+00:00 ContainerStream: WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-30T09:35:13.9088651+00:00 ContainerStream: Updating certificates in /etc/ssl/certs...
+2026-08-30T09:35:25.7007370+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_ECC_Root_CA_2022.pem
+2026-08-30T09:35:25.7015346+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_RSA_Root_CA_2022.pem
+2026-08-30T09:35:25.8529294+00:00 ContainerStream: rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2026-08-30T09:35:25.9012566+00:00 ContainerStream: 4 added, 0 removed; done.
+2026-08-30T09:35:25.9023517+00:00 ContainerStream: Running hooks in /etc/ca-certificates/update.d...
+2026-08-30T09:35:25.9127635+00:00 ContainerStream: done.
+2026-08-30T09:35:25.9319359+00:00 ContainerStream: CA certificates copied and updated successfully.
+2026-08-30T09:35:26.0612890+00:00 ContainerStream: Starting periodic command scheduler: cron.
+2026-08-30T09:35:26.1711754+00:00 ContainerStream: Could not find build manifest file at '/home/site/wwwroot/oryx-manifest.toml'
+2026-08-30T09:35:26.1718840+00:00 ContainerStream: Could not find operation ID in manifest. Generating an operation id...
+2026-08-30T09:35:26.1726205+00:00 ContainerStream: Build Operation ID: 063a5458-6d4f-4bce-ae80-26c877ae10ab
+2026-08-30T09:35:27.1124999+00:00 ContainerStream: Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2026-08-30T09:35:27.2610854+00:00 ContainerStream: Writing output script to '/opt/startup/startup.sh'
+2026-08-30T09:35:27.4899515+00:00 ContainerStream: Running #!/bin/sh
+2026-08-30T09:35:27.4899717+00:00 ContainerStream: 
+2026-08-30T09:35:27.4899739+00:00 ContainerStream: # Enter the source directory to make sure the script runs where the user expects
+2026-08-30T09:35:27.4899796+00:00 ContainerStream: cd "/home/site/wwwroot"
+2026-08-30T09:35:27.4899810+00:00 ContainerStream: 
+2026-08-30T09:35:27.4899827+00:00 ContainerStream: export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2026-08-30T09:35:27.4899842+00:00 ContainerStream: if [ -z "$PORT" ]; then
+2026-08-30T09:35:27.4899856+00:00 ContainerStream: 		export PORT=8080
+2026-08-30T09:35:27.4899869+00:00 ContainerStream: fi
+2026-08-30T09:35:27.4899882+00:00 ContainerStream: 
+2026-08-30T09:35:27.4899898+00:00 ContainerStream: node /opt/startup/default-static-site.js
+2026-08-30T09:35:29.6868555+00:00 ContainerStatus: Site startup probe succeeded after 18.0817988 seconds.
+2026-08-30T09:35:29.8193008+00:00 ContainerStatus: State: Starting, Action: WarmUpProbeSucceeded, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site startup probe succeeded after 18.0817988 seconds., DetailsLevel: INFO
+2026-08-30T09:35:30.0684438+00:00 ContainerStatus: Site started.
+2026-08-30T09:35:30.0692109+00:00 ContainerStatus: State: Started, Action: None, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 08/30/2026 09:35:30 (UTC), DetailsLevel: INFO
+2026-08-30T09:35:30.0701827+00:00 ContainerStatus: Site is running with patch version NODE-20.20.2
+========== New Cold Start Attempt (2026-08-30T09:42:04.3588232+00:00) ==========
+2026-08-30T09:42:04.3588232+00:00 ContainerStatus: State: Stopping, Action: UnmountingVolumes, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: , DetailsLevel: ERR
+2026-08-30T09:42:04.5268947+00:00 ContainerStatus: State: Stopping, Action: StoppingSiteNetworks, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: , DetailsLevel: ERR
+2026-08-30T09:42:04.6264571+00:00 ContainerStatus: State: Stopped, Action: None, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 09:42:04 (UTC), DetailsLevel: ERR
+2026-08-30T09:42:24.7669897+00:00 ContainerStatus: State: Stopping, Action: StoppingSiteContainers, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 07:36:34, LastErrorDetails: There was an issue setting up VNet., Details: Site started at 08/30/2026 09:35:30 (UTC), DetailsLevel: INFO
+2026-08-30T09:42:24.7670490+00:00 ContainerStatus: Container is terminating. Grace period: 5 seconds.
+2026-08-30T09:42:24.7764101+00:00 ContainerStatus: Stop and delete container. Retry count = 0
+2026-08-30T09:42:24.7764547+00:00 ContainerStatus: Stopping container: 674c7641285d_app-devopsapp-task5.
+2026-08-30T09:42:29.9201677+00:00 ContainerStatus: Deleting container: 674c7641285d_app-devopsapp-task5. Retry count = 0
+2026-08-30T09:42:30.0802351+00:00 ContainerStatus: Container spec TerminationMessagePolicy  path 
+2026-08-30T09:42:30.0806598+00:00 ContainerStatus: Container is terminated. Total time elapsed: 5313 ms.
+2026-08-30T09:42:30.3320687+00:00 ContainerStatus: Site: app-devopsapp-task5 stopped.
+2026-08-30T09:46:57.6256153+00:00 ContainerStatus: State: Starting, Action: EstablishingSiteNetworks, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 09:42:04 (UTC), DetailsLevel: ERR
+2026-08-30T09:47:05.0052091+00:00 ContainerStatus: State: Starting, Action: StartingMsiContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 09:42:04 (UTC), DetailsLevel: ERR
+2026-08-30T09:47:18.9727948+00:00 ContainerStatus: State: Starting, Action: StartingSiteContainers, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 09:42:04 (UTC), DetailsLevel: ERR
+2026-08-30T09:47:18.9800997+00:00 ContainerStatus: Container start method called.
+2026-08-30T09:47:18.9803068+00:00 ContainerStatus: State: Starting, Action: PullingImage, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: Pulling image 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T09:47:18.9803788+00:00 ContainerStatus: Establishing network.
+2026-08-30T09:47:18.9804492+00:00 ContainerStatus: Pulling image: appsvc/node:20-lts_20260710.8.tuxprod.
+2026-08-30T09:47:19.2407636+00:00 ContainerStatus: Container is starting.
+2026-08-30T09:47:19.2408263+00:00 ContainerStatus: State: Starting, Action: MountingVolumes, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: Mounting volumes for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T09:47:19.2408731+00:00 ContainerStatus: Establishing user namespace if not established already.
+2026-08-30T09:47:19.2409680+00:00 ContainerStatus: Establishing network if not established already.
+2026-08-30T09:47:19.2411398+00:00 ContainerStatus: Mounting volumes.
+2026-08-30T09:47:19.2412190+00:00 ContainerStatus: Nested mountpoint site/wwwroot
+2026-08-30T09:47:19.2714422+00:00 ContainerStatus: Nested mountpoint volatile/logs
+2026-08-30T09:47:19.2930861+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:47:19.3016132+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:47:19.3921510+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:47:19.4111347+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:47:19.4117299+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:47:19.8727529+00:00 ContainerStatus: Skipping optional volume mount 'Package' at /home/site/wwwroot.
+2026-08-30T09:47:19.8728312+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: Finished pulling container image and mounting volumes for app-devopsapp-task5. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-08-30T09:47:19.8730127+00:00 ContainerStatus: Creating container.
+2026-08-30T09:47:19.8730640+00:00 ContainerStatus: Creating pipes for streaming container io.
+2026-08-30T09:47:19.8731124+00:00 ContainerStatus: Creating stdout named pipe at /podr/container/pipe/ddebe2928b80_app-devopsapp-task5/stdout_1bf64af2c73b4ed7b6f90624563908fd.
+2026-08-30T09:47:19.8732089+00:00 ContainerStatus: Successfully created stdout named pipe at: /podr/container/pipe/ddebe2928b80_app-devopsapp-task5/stdout_1bf64af2c73b4ed7b6f90624563908fd.
+2026-08-30T09:47:19.8732491+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/ddebe2928b80_app-devopsapp-task5/stdout_1bf64af2c73b4ed7b6f90624563908fd for reading in non-blocking mode.
+2026-08-30T09:47:19.8732998+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/ddebe2928b80_app-devopsapp-task5/stdout_1bf64af2c73b4ed7b6f90624563908fd.
+2026-08-30T09:47:19.8806312+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/ddebe2928b80_app-devopsapp-task5/stdout_1bf64af2c73b4ed7b6f90624563908fd.
+2026-08-30T09:47:19.8816069+00:00 ContainerStatus: Creating stderr named pipe at /podr/container/pipe/ddebe2928b80_app-devopsapp-task5/stderr_cf34947cffe948dfaeff8196bd13134d.
+2026-08-30T09:47:19.8816825+00:00 ContainerStatus: Successfully created stderr named pipe at: /podr/container/pipe/ddebe2928b80_app-devopsapp-task5/stderr_cf34947cffe948dfaeff8196bd13134d.
+2026-08-30T09:47:19.8817217+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/ddebe2928b80_app-devopsapp-task5/stderr_cf34947cffe948dfaeff8196bd13134d for reading in non-blocking mode.
+2026-08-30T09:47:19.8817715+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/ddebe2928b80_app-devopsapp-task5/stderr_cf34947cffe948dfaeff8196bd13134d.
+2026-08-30T09:47:19.8818147+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/ddebe2928b80_app-devopsapp-task5/stderr_cf34947cffe948dfaeff8196bd13134d.
+2026-08-30T09:47:19.8818877+00:00 ContainerStatus: Overriding PORT environment variable with pre-calculated port: 8080.
+2026-08-30T09:47:19.8820484+00:00 ContainerStatus: Setting value of PORT variable to 8080
+2026-08-30T09:47:19.8821288+00:00 ContainerStatus: Creating container with image: appsvc/node:20-lts_20260710.8.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod
+2026-08-30T09:47:20.5606766+00:00 ContainerStatus: Starting container: ddebe2928b80_app-devopsapp-task5.
+2026-08-30T09:47:20.5919878+00:00 ContainerStatus: Starting watchers and probes.
+2026-08-30T09:47:20.5927309+00:00 ContainerStatus: Starting metrics collection.
+2026-08-30T09:47:20.5937627+00:00 ContainerStatus: Container is running.
+2026-08-30T09:47:20.6623949+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T09:47:20.9030298+00:00 ContainerStatus: Container start method finished after 1922 ms.
+2026-08-30T09:47:20.9031412+00:00 ContainerStatus: State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T09:47:20.9031708+00:00 ContainerStatus: State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-08-30T09:47:21.6034194+00:00 ContainerStream:    _____                               
+2026-08-30T09:47:21.6034475+00:00 ContainerStream:   /  _  \ __________ _________   ____  
+2026-08-30T09:47:21.6034492+00:00 ContainerStream:  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2026-08-30T09:47:21.6034506+00:00 ContainerStream: /    |    \/    /|  |  /|  | \/\  ___/ 
+2026-08-30T09:47:21.6034517+00:00 ContainerStream: \____|__  /_____ \____/ |__|    \___  >
+2026-08-30T09:47:21.6034534+00:00 ContainerStream:         \/      \/                  \/ 
+2026-08-30T09:47:21.6034607+00:00 ContainerStream: A P P   S E R V I C E   O N   L I N U X
+2026-08-30T09:47:21.6034617+00:00 ContainerStream: 
+2026-08-30T09:47:21.6034629+00:00 ContainerStream: Documentation    : http://aka.ms/webapp-linux
+2026-08-30T09:47:21.6034643+00:00 ContainerStream: NodeJS quickstart: https://aka.ms/node-qs
+2026-08-30T09:47:21.6034654+00:00 ContainerStream: NodeJS Version   : v20.20.2
+2026-08-30T09:47:21.6034664+00:00 ContainerStream: Instance Name    : lw0sdlwk0000PM
+2026-08-30T09:47:21.6034680+00:00 ContainerStream: Instance Id      : a9cebb550e254ba9270d015acd372767c78fa4f3f79fc353fb793f2912e673b3
+2026-08-30T09:47:21.6034689+00:00 ContainerStream: 
+2026-08-30T09:47:21.6034700+00:00 ContainerStream: Note: Any data outside '/home' is not persisted
+2026-08-30T09:47:23.6844073+00:00 ContainerStream: Starting OpenBSD Secure Shell server: sshd.
+2026-08-30T09:47:23.7046749+00:00 ContainerStream: WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-30T09:47:23.7425400+00:00 ContainerStream: Updating certificates in /etc/ssl/certs...
+2026-08-30T09:47:34.7952958+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_ECC_Root_CA_2022.pem
+2026-08-30T09:47:34.7959980+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_RSA_Root_CA_2022.pem
+2026-08-30T09:47:34.9779874+00:00 ContainerStream: rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2026-08-30T09:47:35.0177618+00:00 ContainerStream: 4 added, 0 removed; done.
+2026-08-30T09:47:35.0177793+00:00 ContainerStream: Running hooks in /etc/ca-certificates/update.d...
+2026-08-30T09:47:35.0269126+00:00 ContainerStream: done.
+2026-08-30T09:47:35.0460425+00:00 ContainerStream: CA certificates copied and updated successfully.
+2026-08-30T09:47:35.1673273+00:00 ContainerStream: Starting periodic command scheduler: cron.
+2026-08-30T09:47:35.3075992+00:00 ContainerStream: Could not find build manifest file at '/home/site/wwwroot/oryx-manifest.toml'
+2026-08-30T09:47:35.3155243+00:00 ContainerStream: Could not find operation ID in manifest. Generating an operation id...
+2026-08-30T09:47:35.3172139+00:00 ContainerStream: Build Operation ID: 1738d632-194d-4299-80bd-9e6103383334
+2026-08-30T09:47:36.4155394+00:00 ContainerStream: Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2026-08-30T09:47:36.5548400+00:00 ContainerStream: Writing output script to '/opt/startup/startup.sh'
+2026-08-30T09:47:36.7249788+00:00 ContainerStream: Running #!/bin/sh
+2026-08-30T09:47:36.7250027+00:00 ContainerStream: 
+2026-08-30T09:47:36.7250046+00:00 ContainerStream: # Enter the source directory to make sure the script runs where the user expects
+2026-08-30T09:47:36.7250059+00:00 ContainerStream: cd "/home/site/wwwroot"
+2026-08-30T09:47:36.7250073+00:00 ContainerStream: 
+2026-08-30T09:47:36.7250086+00:00 ContainerStream: export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2026-08-30T09:47:36.7250097+00:00 ContainerStream: if [ -z "$PORT" ]; then
+2026-08-30T09:47:36.7250153+00:00 ContainerStream: 		export PORT=8080
+2026-08-30T09:47:36.7250163+00:00 ContainerStream: fi
+2026-08-30T09:47:36.7250172+00:00 ContainerStream: 
+2026-08-30T09:47:36.7255774+00:00 ContainerStream: node /opt/startup/default-static-site.js
+2026-08-30T09:47:38.9428318+00:00 ContainerStatus: Site startup probe succeeded after 18.0390418 seconds.
+2026-08-30T09:47:39.0839227+00:00 ContainerStatus: State: Starting, Action: WarmUpProbeSucceeded, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: Site startup probe succeeded after 18.0390418 seconds., DetailsLevel: INFO
+2026-08-30T09:47:39.3053269+00:00 ContainerStatus: Site started.
+2026-08-30T09:47:39.3053877+00:00 ContainerStatus: State: Started, Action: None, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 09:42:04, LastErrorDetails: There was an issue setting up VNet., Details: Site started at 08/30/2026 09:47:39 (UTC), DetailsLevel: INFO
+2026-08-30T09:47:39.3061396+00:00 ContainerStatus: Site is running with patch version NODE-20.20.2
+========== New Cold Start Attempt (2026-08-30T09:47:46.3666204+00:00) ==========
+2026-08-30T09:47:46.3666204+00:00 ContainerStatus: State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T09:47:48.4828877+00:00 ContainerStatus: State: Starting, Action: StartingMsiContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T09:48:00.9006228+00:00 ContainerStatus: State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-08-30T09:48:00.9007158+00:00 ContainerStatus: Container start method called.
+2026-08-30T09:48:00.9007450+00:00 ContainerStatus: State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T09:48:00.9007797+00:00 ContainerStatus: Establishing network.
+2026-08-30T09:48:00.9008237+00:00 ContainerStatus: Pulling image: appsvc/node:20-lts_20260710.8.tuxprod.
+2026-08-30T09:48:01.2119362+00:00 ContainerStatus: Container is starting.
+2026-08-30T09:48:01.2120065+00:00 ContainerStatus: State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T09:48:01.2120997+00:00 ContainerStatus: Establishing user namespace if not established already.
+2026-08-30T09:48:01.2122767+00:00 ContainerStatus: Establishing network if not established already.
+2026-08-30T09:48:01.2127101+00:00 ContainerStatus: Mounting volumes.
+2026-08-30T09:48:01.2129898+00:00 ContainerStatus: Nested mountpoint site/wwwroot
+2026-08-30T09:48:01.2422852+00:00 ContainerStatus: Nested mountpoint volatile/logs
+2026-08-30T09:48:01.2517948+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:48:01.2613122+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:48:01.3129929+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:48:01.3132662+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:48:01.3416953+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T09:48:01.6917430+00:00 ContainerStatus: Skipping optional volume mount 'Package' at /home/site/wwwroot.
+2026-08-30T09:48:02.0127453+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for app-devopsapp-task5. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-08-30T09:48:02.0607697+00:00 ContainerStatus: Creating container.
+2026-08-30T09:48:02.0608687+00:00 ContainerStatus: Creating pipes for streaming container io.
+2026-08-30T09:48:02.0609191+00:00 ContainerStatus: Creating stdout named pipe at /podr/container/pipe/7a1978865fbc_app-devopsapp-task5/stdout_3fb3ab1628294853902a4b66b2cfe859.
+2026-08-30T09:48:02.0619778+00:00 ContainerStatus: Successfully created stdout named pipe at: /podr/container/pipe/7a1978865fbc_app-devopsapp-task5/stdout_3fb3ab1628294853902a4b66b2cfe859.
+2026-08-30T09:48:02.0624562+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/7a1978865fbc_app-devopsapp-task5/stdout_3fb3ab1628294853902a4b66b2cfe859 for reading in non-blocking mode.
+2026-08-30T09:48:02.0625204+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/7a1978865fbc_app-devopsapp-task5/stdout_3fb3ab1628294853902a4b66b2cfe859.
+2026-08-30T09:48:02.0625494+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/7a1978865fbc_app-devopsapp-task5/stdout_3fb3ab1628294853902a4b66b2cfe859.
+2026-08-30T09:48:02.0626507+00:00 ContainerStatus: Creating stderr named pipe at /podr/container/pipe/7a1978865fbc_app-devopsapp-task5/stderr_7146aa902d4c4a29a17ecda7ada16a93.
+2026-08-30T09:48:02.0627235+00:00 ContainerStatus: Successfully created stderr named pipe at: /podr/container/pipe/7a1978865fbc_app-devopsapp-task5/stderr_7146aa902d4c4a29a17ecda7ada16a93.
+2026-08-30T09:48:02.0627679+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/7a1978865fbc_app-devopsapp-task5/stderr_7146aa902d4c4a29a17ecda7ada16a93 for reading in non-blocking mode.
+2026-08-30T09:48:02.0628185+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/7a1978865fbc_app-devopsapp-task5/stderr_7146aa902d4c4a29a17ecda7ada16a93.
+2026-08-30T09:48:02.1008941+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/7a1978865fbc_app-devopsapp-task5/stderr_7146aa902d4c4a29a17ecda7ada16a93.
+2026-08-30T09:48:02.1009702+00:00 ContainerStatus: Creating container with image: appsvc/node:20-lts_20260710.8.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod
+2026-08-30T09:48:03.5032756+00:00 ContainerStatus: Starting container: 7a1978865fbc_app-devopsapp-task5.
+2026-08-30T09:48:03.5942213+00:00 ContainerStatus: Starting watchers and probes.
+2026-08-30T09:48:03.6019553+00:00 ContainerStatus: Starting metrics collection.
+2026-08-30T09:48:03.6022578+00:00 ContainerStatus: Container is running.
+2026-08-30T09:48:03.6023144+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T09:48:03.9912548+00:00 ContainerStatus: Container start method finished after 3090 ms.
+2026-08-30T09:48:03.9913955+00:00 ContainerStatus: State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T09:48:03.9914099+00:00 ContainerStatus: State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-08-30T09:48:04.5221580+00:00 ContainerStream:    _____                               
+2026-08-30T09:48:04.5222523+00:00 ContainerStream:   /  _  \ __________ _________   ____  
+2026-08-30T09:48:04.5222550+00:00 ContainerStream:  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2026-08-30T09:48:04.5222563+00:00 ContainerStream: /    |    \/    /|  |  /|  | \/\  ___/ 
+2026-08-30T09:48:04.5222577+00:00 ContainerStream: \____|__  /_____ \____/ |__|    \___  >
+2026-08-30T09:48:04.5222595+00:00 ContainerStream:         \/      \/                  \/ 
+2026-08-30T09:48:04.5222609+00:00 ContainerStream: A P P   S E R V I C E   O N   L I N U X
+2026-08-30T09:48:04.5222645+00:00 ContainerStream: 
+2026-08-30T09:48:04.5222664+00:00 ContainerStream: Documentation    : http://aka.ms/webapp-linux
+2026-08-30T09:48:04.5222682+00:00 ContainerStream: NodeJS quickstart: https://aka.ms/node-qs
+2026-08-30T09:48:04.5222696+00:00 ContainerStream: NodeJS Version   : v20.20.2
+2026-08-30T09:48:04.5222711+00:00 ContainerStream: Instance Name    : lw0sdlwk0000PM
+2026-08-30T09:48:04.5222730+00:00 ContainerStream: Instance Id      : a9cebb550e254ba9270d015acd372767c78fa4f3f79fc353fb793f2912e673b3
+2026-08-30T09:48:04.5222743+00:00 ContainerStream: 
+2026-08-30T09:48:04.5222775+00:00 ContainerStream: Note: Any data outside '/home' is not persisted
+2026-08-30T09:48:09.3678154+00:00 ContainerStream: Starting OpenBSD Secure Shell server: sshd.
+2026-08-30T09:48:09.3891352+00:00 ContainerStream: WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-30T09:48:09.5000759+00:00 ContainerStream: Updating certificates in /etc/ssl/certs...
+2026-08-30T09:48:26.6016313+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_ECC_Root_CA_2022.pem
+2026-08-30T09:48:26.6016616+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_RSA_Root_CA_2022.pem
+2026-08-30T09:48:26.9017978+00:00 ContainerStream: rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2026-08-30T09:48:26.9696439+00:00 ContainerStream: 4 added, 0 removed; done.
+2026-08-30T09:48:26.9709239+00:00 ContainerStream: Running hooks in /etc/ca-certificates/update.d...
+2026-08-30T09:48:27.0301910+00:00 ContainerStream: done.
+2026-08-30T09:48:27.0496209+00:00 ContainerStream: CA certificates copied and updated successfully.
+2026-08-30T09:48:27.2201712+00:00 ContainerStream: Starting periodic command scheduler: cron.
+2026-08-30T09:48:27.4688337+00:00 ContainerStream: Could not find build manifest file at '/home/site/wwwroot/oryx-manifest.toml'
+2026-08-30T09:48:27.4696871+00:00 ContainerStream: Could not find operation ID in manifest. Generating an operation id...
+2026-08-30T09:48:27.4786266+00:00 ContainerStream: Build Operation ID: f7f19ac9-2ce6-4d6f-b891-7f9ab588a9a5
+2026-08-30T09:48:28.5777282+00:00 ContainerStream: Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2026-08-30T09:48:28.7354249+00:00 ContainerStream: Writing output script to '/opt/startup/startup.sh'
+2026-08-30T09:48:28.9472058+00:00 ContainerStream: Running #!/bin/sh
+2026-08-30T09:48:28.9472304+00:00 ContainerStream: 
+2026-08-30T09:48:28.9472331+00:00 ContainerStream: # Enter the source directory to make sure the script runs where the user expects
+2026-08-30T09:48:28.9472397+00:00 ContainerStream: cd "/home/site/wwwroot"
+2026-08-30T09:48:28.9472410+00:00 ContainerStream: 
+2026-08-30T09:48:28.9472427+00:00 ContainerStream: export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2026-08-30T09:48:28.9472442+00:00 ContainerStream: if [ -z "$PORT" ]; then
+2026-08-30T09:48:28.9472456+00:00 ContainerStream: 		export PORT=8080
+2026-08-30T09:48:28.9472468+00:00 ContainerStream: fi
+2026-08-30T09:48:28.9472481+00:00 ContainerStream: 
+2026-08-30T09:48:28.9645037+00:00 ContainerStream: node /opt/startup/default-static-site.js
+2026-08-30T09:48:32.0614677+00:00 ContainerStatus: Site startup probe succeeded after 28.069104 seconds.
+2026-08-30T09:48:32.2208912+00:00 ContainerStatus: State: Starting, Action: WarmUpProbeSucceeded, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site startup probe succeeded after 28.069104 seconds., DetailsLevel: INFO
+2026-08-30T09:48:32.5897827+00:00 ContainerStatus: Site started.
+2026-08-30T09:48:32.5902585+00:00 ContainerStatus: State: Started, Action: None, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 08/30/2026 09:48:32 (UTC), DetailsLevel: INFO
+2026-08-30T09:48:32.5904175+00:00 ContainerStatus: Site is running with patch version NODE-20.20.2
+========== New Cold Start Attempt (2026-08-30T10:07:58.7106275+00:00) ==========
+2026-08-30T10:07:58.7106275+00:00 ContainerStatus: State: Starting, Action: EstablishingSiteNetworks, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 10:07:33 (UTC), DetailsLevel: WARN
+2026-08-30T10:08:00.1319409+00:00 ContainerStatus: State: Starting, Action: StartingMsiContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 10:07:33 (UTC), DetailsLevel: WARN
+2026-08-30T10:08:10.7685048+00:00 ContainerStatus: State: Starting, Action: StartingSiteContainers, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 10:07:33 (UTC), DetailsLevel: WARN
+2026-08-30T10:08:10.7687083+00:00 ContainerStatus: Container start method called.
+2026-08-30T10:08:10.7689411+00:00 ContainerStatus: State: Starting, Action: PullingImage, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Pulling image 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T10:08:10.7691149+00:00 ContainerStatus: Establishing network.
+2026-08-30T10:08:10.7868241+00:00 ContainerStatus: Pulling image: appsvc/node:20-lts_20260710.8.tuxprod.
+2026-08-30T10:08:11.6599636+00:00 ContainerStatus: Container is starting.
+2026-08-30T10:08:11.6600098+00:00 ContainerStatus: State: Starting, Action: MountingVolumes, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Mounting volumes for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T10:08:11.6600348+00:00 ContainerStatus: Establishing user namespace if not established already.
+2026-08-30T10:08:11.6600596+00:00 ContainerStatus: Establishing network if not established already.
+2026-08-30T10:08:11.6600933+00:00 ContainerStatus: Mounting volumes.
+2026-08-30T10:08:11.6601460+00:00 ContainerStatus: Nested mountpoint site/wwwroot
+2026-08-30T10:08:11.6794217+00:00 ContainerStatus: Nested mountpoint volatile/logs
+2026-08-30T10:08:11.7178971+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T10:08:11.7475376+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T10:08:11.7583602+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T10:08:11.7585764+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T10:08:11.8076937+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T10:08:11.9900474+00:00 ContainerStatus: Skipping optional volume mount 'Package' at /home/site/wwwroot.
+2026-08-30T10:08:12.0618264+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Finished pulling container image and mounting volumes for app-devopsapp-task5. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-08-30T10:08:12.0620386+00:00 ContainerStatus: Creating container.
+2026-08-30T10:08:12.0622371+00:00 ContainerStatus: Creating pipes for streaming container io.
+2026-08-30T10:08:12.0699714+00:00 ContainerStatus: Creating stdout named pipe at /podr/container/pipe/52271e0c37cc_app-devopsapp-task5/stdout_a6755158164742b7a3138fea6414644d.
+2026-08-30T10:08:12.0703825+00:00 ContainerStatus: Successfully created stdout named pipe at: /podr/container/pipe/52271e0c37cc_app-devopsapp-task5/stdout_a6755158164742b7a3138fea6414644d.
+2026-08-30T10:08:12.0707302+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/52271e0c37cc_app-devopsapp-task5/stdout_a6755158164742b7a3138fea6414644d for reading in non-blocking mode.
+2026-08-30T10:08:12.0711069+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/52271e0c37cc_app-devopsapp-task5/stdout_a6755158164742b7a3138fea6414644d.
+2026-08-30T10:08:12.0714642+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/52271e0c37cc_app-devopsapp-task5/stdout_a6755158164742b7a3138fea6414644d.
+2026-08-30T10:08:12.0793899+00:00 ContainerStatus: Creating stderr named pipe at /podr/container/pipe/52271e0c37cc_app-devopsapp-task5/stderr_4162bbb5a2ce429e978a43939d53f22f.
+2026-08-30T10:08:12.0795617+00:00 ContainerStatus: Successfully created stderr named pipe at: /podr/container/pipe/52271e0c37cc_app-devopsapp-task5/stderr_4162bbb5a2ce429e978a43939d53f22f.
+2026-08-30T10:08:12.0796115+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/52271e0c37cc_app-devopsapp-task5/stderr_4162bbb5a2ce429e978a43939d53f22f for reading in non-blocking mode.
+2026-08-30T10:08:12.0796630+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/52271e0c37cc_app-devopsapp-task5/stderr_4162bbb5a2ce429e978a43939d53f22f.
+2026-08-30T10:08:12.0799510+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/52271e0c37cc_app-devopsapp-task5/stderr_4162bbb5a2ce429e978a43939d53f22f.
+2026-08-30T10:08:12.0801076+00:00 ContainerStatus: Creating container with image: appsvc/node:20-lts_20260710.8.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/node:20-lts_20260710.8.tuxprod
+2026-08-30T10:08:12.4254040+00:00 ContainerStatus: Starting container: 52271e0c37cc_app-devopsapp-task5.
+2026-08-30T10:08:12.4808333+00:00 ContainerStatus: Starting watchers and probes.
+2026-08-30T10:08:12.4813520+00:00 ContainerStatus: Starting metrics collection.
+2026-08-30T10:08:12.4814899+00:00 ContainerStatus: Container is running.
+2026-08-30T10:08:12.4821058+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T10:08:12.6003583+00:00 ContainerStatus: Container start method finished after 1831 ms.
+2026-08-30T10:08:12.6006631+00:00 ContainerStatus: State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T10:08:12.6007453+00:00 ContainerStatus: State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-08-30T10:08:12.7100506+00:00 ContainerStream:    _____                               
+2026-08-30T10:08:12.7101148+00:00 ContainerStream:   /  _  \ __________ _________   ____  
+2026-08-30T10:08:12.7101199+00:00 ContainerStream:  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2026-08-30T10:08:12.7101214+00:00 ContainerStream: /    |    \/    /|  |  /|  | \/\  ___/ 
+2026-08-30T10:08:12.7101228+00:00 ContainerStream: \____|__  /_____ \____/ |__|    \___  >
+2026-08-30T10:08:12.7101247+00:00 ContainerStream:         \/      \/                  \/ 
+2026-08-30T10:08:12.7101261+00:00 ContainerStream: A P P   S E R V I C E   O N   L I N U X
+2026-08-30T10:08:12.7101274+00:00 ContainerStream: 
+2026-08-30T10:08:12.7101293+00:00 ContainerStream: Documentation    : http://aka.ms/webapp-linux
+2026-08-30T10:08:12.7101324+00:00 ContainerStream: NodeJS quickstart: https://aka.ms/node-qs
+2026-08-30T10:08:12.7101338+00:00 ContainerStream: NodeJS Version   : v20.20.2
+2026-08-30T10:08:12.7101353+00:00 ContainerStream: Instance Name    : lw0sdlwk0000PM
+2026-08-30T10:08:12.7101371+00:00 ContainerStream: Instance Id      : a9cebb550e254ba9270d015acd372767c78fa4f3f79fc353fb793f2912e673b3
+2026-08-30T10:08:12.7101385+00:00 ContainerStream: 
+2026-08-30T10:08:12.7101399+00:00 ContainerStream: Note: Any data outside '/home' is not persisted
+2026-08-30T10:08:15.5732593+00:00 ContainerStream: Starting OpenBSD Secure Shell server: sshd.
+2026-08-30T10:08:15.5846416+00:00 ContainerStream: WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-30T10:08:15.6236892+00:00 ContainerStream: Updating certificates in /etc/ssl/certs...
+2026-08-30T10:08:26.4575831+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_ECC_Root_CA_2022.pem
+2026-08-30T10:08:26.4648785+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_RSA_Root_CA_2022.pem
+2026-08-30T10:08:26.6172959+00:00 ContainerStream: rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2026-08-30T10:08:26.6967453+00:00 ContainerStream: 4 added, 0 removed; done.
+2026-08-30T10:08:26.6967564+00:00 ContainerStream: Running hooks in /etc/ca-certificates/update.d...
+2026-08-30T10:08:26.6967719+00:00 ContainerStream: done.
+2026-08-30T10:08:26.7166425+00:00 ContainerStream: CA certificates copied and updated successfully.
+2026-08-30T10:08:26.9371098+00:00 ContainerStream: Starting periodic command scheduler: cron.
+2026-08-30T10:08:27.0868493+00:00 ContainerStream: Could not find build manifest file at '/home/site/wwwroot/oryx-manifest.toml'
+2026-08-30T10:08:27.0878071+00:00 ContainerStream: Could not find operation ID in manifest. Generating an operation id...
+2026-08-30T10:08:27.0954305+00:00 ContainerStream: Build Operation ID: 6b601885-9d7f-4199-bbf2-2bdb0aa94fdc
+2026-08-30T10:08:28.1479362+00:00 ContainerStream: Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2026-08-30T10:08:28.2772967+00:00 ContainerStream: Writing output script to '/opt/startup/startup.sh'
+2026-08-30T10:08:28.4659989+00:00 ContainerStream: Running #!/bin/sh
+2026-08-30T10:08:28.4660579+00:00 ContainerStream: 
+2026-08-30T10:08:28.4660672+00:00 ContainerStream: # Enter the source directory to make sure the script runs where the user expects
+2026-08-30T10:08:28.4660749+00:00 ContainerStream: cd "/home/site/wwwroot"
+2026-08-30T10:08:28.4660890+00:00 ContainerStream: 
+2026-08-30T10:08:28.4660964+00:00 ContainerStream: export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2026-08-30T10:08:28.4661024+00:00 ContainerStream: if [ -z "$PORT" ]; then
+2026-08-30T10:08:28.4661080+00:00 ContainerStream: 		export PORT=8080
+2026-08-30T10:08:28.4661131+00:00 ContainerStream: fi
+2026-08-30T10:08:28.4661180+00:00 ContainerStream: 
+2026-08-30T10:08:28.4667283+00:00 ContainerStream: node /opt/startup/default-static-site.js
+2026-08-30T10:08:30.6837725+00:00 ContainerStatus: Site startup probe succeeded after 18.058272 seconds.
+2026-08-30T10:08:30.8037981+00:00 ContainerStatus: State: Starting, Action: WarmUpProbeSucceeded, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Site startup probe succeeded after 18.058272 seconds., DetailsLevel: INFO
+2026-08-30T10:08:31.4109827+00:00 ContainerStatus: Site started.
+2026-08-30T10:08:31.4115310+00:00 ContainerStatus: State: Started, Action: None, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Site started at 08/30/2026 10:08:31 (UTC), DetailsLevel: INFO
+2026-08-30T10:08:31.4424649+00:00 ContainerStatus: Site is running with patch version NODE-20.20.2
+========== New Cold Start Attempt (2026-08-30T10:35:48.7662886+00:00) ==========
+2026-08-30T10:35:48.7662886+00:00 ContainerStatus: State: Stopping, Action: UnmountingVolumes, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: , DetailsLevel: ERR
+2026-08-30T10:35:48.8926062+00:00 ContainerStatus: State: Stopping, Action: StoppingSiteNetworks, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: , DetailsLevel: ERR
+2026-08-30T10:35:49.0043895+00:00 ContainerStatus: State: Stopped, Action: None, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 10:35:49 (UTC), DetailsLevel: ERR
+2026-08-30T10:36:09.1657925+00:00 ContainerStatus: State: Stopping, Action: StoppingSite, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Site started at 08/30/2026 10:08:31 (UTC), DetailsLevel: INFO
+2026-08-30T10:36:09.1666624+00:00 ContainerStatus: State: Stopping, Action: StoppingSiteContainers, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:07:32, LastErrorDetails: There was an issue setting up VNet., Details: Site started at 08/30/2026 10:08:31 (UTC), DetailsLevel: INFO
+2026-08-30T10:36:09.1669773+00:00 ContainerStatus: Container is terminating. Grace period: 5 seconds.
+2026-08-30T10:36:09.1793981+00:00 ContainerStatus: Stop and delete container. Retry count = 0
+2026-08-30T10:36:09.1863655+00:00 ContainerStatus: Stopping container: 52271e0c37cc_app-devopsapp-task5.
+2026-08-30T10:36:14.2931510+00:00 ContainerStatus: Deleting container: 52271e0c37cc_app-devopsapp-task5. Retry count = 0
+2026-08-30T10:36:14.4309286+00:00 ContainerStatus: Container spec TerminationMessagePolicy  path 
+2026-08-30T10:36:14.4312833+00:00 ContainerStatus: Container is terminated. Total time elapsed: 5264 ms.
+2026-08-30T10:36:14.7114509+00:00 ContainerStatus: Site: app-devopsapp-task5 stopped.
+2026-08-30T10:40:50.1326254+00:00 ContainerStatus: State: Starting, Action: EstablishingSiteNetworks, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 10:35:49 (UTC), DetailsLevel: ERR
+2026-08-30T10:40:55.2407983+00:00 ContainerStatus: State: Starting, Action: StartingMsiContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 10:35:49 (UTC), DetailsLevel: ERR
+2026-08-30T10:41:03.9183712+00:00 ContainerStatus: State: Starting, Action: StartingSiteContainers, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: Site stopped at 08/30/2026 10:35:49 (UTC), DetailsLevel: ERR
+2026-08-30T10:41:03.9356756+00:00 ContainerStatus: Container start method called.
+2026-08-30T10:41:03.9361617+00:00 ContainerStatus: State: Starting, Action: PullingImage, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: Pulling image 10.1.0.4:13209/appsvc/node:20-lts_20260710.8.tuxprod for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T10:41:03.9364180+00:00 ContainerStatus: Establishing network.
+2026-08-30T10:41:03.9365251+00:00 ContainerStatus: Pulling image: appsvc/node:20-lts_20260710.8.tuxprod.
+2026-08-30T10:41:04.1477089+00:00 ContainerStatus: Container is starting.
+2026-08-30T10:41:04.1477820+00:00 ContainerStatus: State: Starting, Action: MountingVolumes, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: Mounting volumes for app-devopsapp-task5., DetailsLevel: INFO
+2026-08-30T10:41:04.1478175+00:00 ContainerStatus: Establishing user namespace if not established already.
+2026-08-30T10:41:04.1478441+00:00 ContainerStatus: Establishing network if not established already.
+2026-08-30T10:41:04.1478795+00:00 ContainerStatus: Mounting volumes.
+2026-08-30T10:41:04.1479440+00:00 ContainerStatus: Nested mountpoint site/wwwroot
+2026-08-30T10:41:04.1666659+00:00 ContainerStatus: Nested mountpoint volatile/logs
+2026-08-30T10:41:04.1784167+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T10:41:04.2084088+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T10:41:04.2584801+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T10:41:04.2679616+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T10:41:04.2784808+00:00 ContainerStatus: Nested mountpoint 
+2026-08-30T10:41:04.6292964+00:00 ContainerStatus: Skipping optional volume mount 'Package' at /home/site/wwwroot.
+2026-08-30T10:41:04.7772451+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: Finished pulling container image and mounting volumes for app-devopsapp-task5. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-08-30T10:41:04.7772809+00:00 ContainerStatus: Creating container.
+2026-08-30T10:41:04.7773054+00:00 ContainerStatus: Creating pipes for streaming container io.
+2026-08-30T10:41:04.7773285+00:00 ContainerStatus: Creating stdout named pipe at /podr/container/pipe/481e23922844_app-devopsapp-task5/stdout_e32d8a94bafb4c8e8abfea405c895e37.
+2026-08-30T10:41:04.7774762+00:00 ContainerStatus: Successfully created stdout named pipe at: /podr/container/pipe/481e23922844_app-devopsapp-task5/stdout_e32d8a94bafb4c8e8abfea405c895e37.
+2026-08-30T10:41:04.7775178+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/481e23922844_app-devopsapp-task5/stdout_e32d8a94bafb4c8e8abfea405c895e37 for reading in non-blocking mode.
+2026-08-30T10:41:04.7775664+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/481e23922844_app-devopsapp-task5/stdout_e32d8a94bafb4c8e8abfea405c895e37.
+2026-08-30T10:41:04.7776095+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/481e23922844_app-devopsapp-task5/stdout_e32d8a94bafb4c8e8abfea405c895e37.
+2026-08-30T10:41:04.7777165+00:00 ContainerStatus: Creating stderr named pipe at /podr/container/pipe/481e23922844_app-devopsapp-task5/stderr_016726f3869c46f3a170ec178dab6d27.
+2026-08-30T10:41:04.7778427+00:00 ContainerStatus: Successfully created stderr named pipe at: /podr/container/pipe/481e23922844_app-devopsapp-task5/stderr_016726f3869c46f3a170ec178dab6d27.
+2026-08-30T10:41:04.7779196+00:00 ContainerStatus: Opening named pipe /podr/container/pipe/481e23922844_app-devopsapp-task5/stderr_016726f3869c46f3a170ec178dab6d27 for reading in non-blocking mode.
+2026-08-30T10:41:04.7781255+00:00 ContainerStatus: Successfully opened named pipe: /podr/container/pipe/481e23922844_app-devopsapp-task5/stderr_016726f3869c46f3a170ec178dab6d27.
+2026-08-30T10:41:04.7967361+00:00 ContainerStatus: Successfully removed non-blocking flag from /podr/container/pipe/481e23922844_app-devopsapp-task5/stderr_016726f3869c46f3a170ec178dab6d27.
+2026-08-30T10:41:04.7974177+00:00 ContainerStatus: Overriding PORT environment variable with pre-calculated port: 8080.
+2026-08-30T10:41:04.7974542+00:00 ContainerStatus: Setting value of PORT variable to 8080
+2026-08-30T10:41:04.7975133+00:00 ContainerStatus: Creating container with image: appsvc/node:20-lts_20260710.8.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/node:20-lts_20260710.8.tuxprod
+2026-08-30T10:41:05.2181941+00:00 ContainerStatus: Starting container: 481e23922844_app-devopsapp-task5.
+2026-08-30T10:41:05.2679333+00:00 ContainerStatus: Starting watchers and probes.
+2026-08-30T10:41:05.2688080+00:00 ContainerStatus: Starting metrics collection.
+2026-08-30T10:41:05.2693157+00:00 ContainerStatus: Container is running.
+2026-08-30T10:41:05.2696545+00:00 ContainerStatus: State: Starting, Action: CreatingContainer, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T10:41:05.3681818+00:00 ContainerStatus: Container start method finished after 1432 ms.
+2026-08-30T10:41:05.3682805+00:00 ContainerStatus: State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: Container app-devopsapp-task5 successfully created and is running., DetailsLevel: INFO
+2026-08-30T10:41:05.3683150+00:00 ContainerStatus: State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-08-30T10:41:06.0099546+00:00 ContainerStream:    _____                               
+2026-08-30T10:41:06.0099765+00:00 ContainerStream:   /  _  \ __________ _________   ____  
+2026-08-30T10:41:06.0099779+00:00 ContainerStream:  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2026-08-30T10:41:06.0099850+00:00 ContainerStream: /    |    \/    /|  |  /|  | \/\  ___/ 
+2026-08-30T10:41:06.0099862+00:00 ContainerStream: \____|__  /_____ \____/ |__|    \___  >
+2026-08-30T10:41:06.0099885+00:00 ContainerStream:         \/      \/                  \/ 
+2026-08-30T10:41:06.0099900+00:00 ContainerStream: A P P   S E R V I C E   O N   L I N U X
+2026-08-30T10:41:06.0099911+00:00 ContainerStream: 
+2026-08-30T10:41:06.0099924+00:00 ContainerStream: Documentation    : http://aka.ms/webapp-linux
+2026-08-30T10:41:06.0099939+00:00 ContainerStream: NodeJS quickstart: https://aka.ms/node-qs
+2026-08-30T10:41:06.0099980+00:00 ContainerStream: NodeJS Version   : v20.20.2
+2026-08-30T10:41:06.0099992+00:00 ContainerStream: Instance Name    : lw0sdlwk0000PM
+2026-08-30T10:41:06.0100006+00:00 ContainerStream: Instance Id      : a9cebb550e254ba9270d015acd372767c78fa4f3f79fc353fb793f2912e673b3
+2026-08-30T10:41:06.0100015+00:00 ContainerStream: 
+2026-08-30T10:41:06.0100027+00:00 ContainerStream: Note: Any data outside '/home' is not persisted
+2026-08-30T10:41:07.7609462+00:00 ContainerStream: Starting OpenBSD Secure Shell server: sshd.
+2026-08-30T10:41:07.7784248+00:00 ContainerStream: WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2026-08-30T10:41:07.8107337+00:00 ContainerStream: Updating certificates in /etc/ssl/certs...
+2026-08-30T10:41:18.9856318+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_ECC_Root_CA_2022.pem
+2026-08-30T10:41:18.9864400+00:00 ContainerStream: rehash: warning: skipping duplicate certificate in azl_SSL.com_TLS_RSA_Root_CA_2022.pem
+2026-08-30T10:41:19.1544815+00:00 ContainerStream: rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2026-08-30T10:41:19.1872080+00:00 ContainerStream: 4 added, 0 removed; done.
+2026-08-30T10:41:19.1957167+00:00 ContainerStream: Running hooks in /etc/ca-certificates/update.d...
+2026-08-30T10:41:19.2050928+00:00 ContainerStream: done.
+2026-08-30T10:41:19.2170097+00:00 ContainerStream: CA certificates copied and updated successfully.
+2026-08-30T10:41:19.3560223+00:00 ContainerStream: Starting periodic command scheduler: cron.
+2026-08-30T10:41:19.7081920+00:00 ContainerStream: Could not find build manifest file at '/home/site/wwwroot/oryx-manifest.toml'
+2026-08-30T10:41:19.7174793+00:00 ContainerStream: Could not find operation ID in manifest. Generating an operation id...
+2026-08-30T10:41:19.7174870+00:00 ContainerStream: Build Operation ID: 201b09fe-4209-4caf-8f1a-7aac881de5e9
+2026-08-30T10:41:20.5784886+00:00 ContainerStream: Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2026-08-30T10:41:20.7768312+00:00 ContainerStream: Writing output script to '/opt/startup/startup.sh'
+2026-08-30T10:41:20.9577080+00:00 ContainerStream: Running #!/bin/sh
+2026-08-30T10:41:20.9577270+00:00 ContainerStream: 
+2026-08-30T10:41:20.9577288+00:00 ContainerStream: # Enter the source directory to make sure the script runs where the user expects
+2026-08-30T10:41:20.9577300+00:00 ContainerStream: cd "/home/site/wwwroot"
+2026-08-30T10:41:20.9577338+00:00 ContainerStream: 
+2026-08-30T10:41:20.9577351+00:00 ContainerStream: export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2026-08-30T10:41:20.9577361+00:00 ContainerStream: if [ -z "$PORT" ]; then
+2026-08-30T10:41:20.9577371+00:00 ContainerStream: 		export PORT=8080
+2026-08-30T10:41:20.9577380+00:00 ContainerStream: fi
+2026-08-30T10:41:20.9577389+00:00 ContainerStream: 
+2026-08-30T10:41:20.9580184+00:00 ContainerStream: node /opt/startup/default-static-site.js
+2026-08-30T10:41:22.4414281+00:00 ContainerStatus: Site startup probe succeeded after 17.0421133 seconds.
+2026-08-30T10:41:22.6029811+00:00 ContainerStatus: State: Starting, Action: WarmUpProbeSucceeded, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: Site startup probe succeeded after 17.0421133 seconds., DetailsLevel: INFO
+2026-08-30T10:41:22.9139768+00:00 ContainerStatus: Site started.
+2026-08-30T10:41:22.9144307+00:00 ContainerStatus: State: Started, Action: None, LastError: VNETFailure, LastErrorTimestamp: 08/30/2026 10:35:48, LastErrorDetails: There was an issue setting up VNet., Details: Site started at 08/30/2026 10:41:22 (UTC), DetailsLevel: INFO
+2026-08-30T10:41:22.9510107+00:00 ContainerStatus: Site is running with patch version NODE-20.20.2

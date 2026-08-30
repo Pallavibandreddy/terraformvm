@@ -10,6 +10,33 @@ resource "azurerm_subnet" "this" {
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.this.name
   address_prefixes     = [var.subnet_address_prefix]
+
+  dynamic "delegation" {
+    for_each = var.enable_app_service_delegation ? [1] : []
+
+    content {
+      name = "app-service-delegation"
+
+      service_delegation {
+        name = "Microsoft.Web/serverFarms"
+
+        actions = [
+          "Microsoft.Network/virtualNetworks/subnets/action"
+        ]
+      }
+    }
+  }
+}
+
+resource "azurerm_subnet" "private_endpoint" {
+  count = var.private_endpoint_subnet_name != null ? 1 : 0
+
+  name                 = var.private_endpoint_subnet_name
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = azurerm_virtual_network.this.name
+  address_prefixes     = [var.private_endpoint_subnet_address_prefix]
+
+  private_endpoint_network_policies = "Disabled"
 }
 
 resource "azurerm_network_security_group" "this" {

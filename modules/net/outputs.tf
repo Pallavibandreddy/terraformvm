@@ -26,3 +26,7 @@ output "public_ip_ids" {
     key => ip.id
   }
 }
+
+output "private_endpoint_subnet_id" {
+  value = var.private_endpoint_subnet_name != null ? azurerm_subnet.private_endpoint[0].id : null
+}

@@ -1,0 +1,16 @@
+{
+  "name": "task5-app",
+  "version": "1.0.0",
+  "description": "Azure DevOps Task 5 Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@azure/identity": "^4.10.0",
+    "@azure/keyvault-secrets": "^4.10.0",
+    "applicationinsights": "^3.9.0",
+    "express": "^5.1.0",
+    "mssql": "^11.0.1"
+  }
+}

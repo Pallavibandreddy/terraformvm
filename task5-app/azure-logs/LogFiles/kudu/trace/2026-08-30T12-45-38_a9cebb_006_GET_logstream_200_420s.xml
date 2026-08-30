@@ -1,0 +1,5 @@
+<step title="Incoming Request" date="2026-08-30T12:45:38.539" instance="a9cebb" url="/logstream" method="GET" type="request" pid="831,1,5" Host="app-devopsapp-task5.scm.azurewebsites.net" User-Agent="AZURECLI/2.70.0 (MSI)" Accept-Encoding="identity" Authorization="Bas..." x-ms-client-request-id="9d12bd6a-a470-11f1-bcfa-eefa30bd841e" X-ARR-LOG-ID="9d12bd6a-a470-11f1-bcfa-eefa30bd841e" CLIENT-IP="103.211.39.236:61403" X-SITE-DEPLOYMENT-ID="app-devopsapp-task5" WAS-DEFAULT-HOSTNAME="app-devopsapp-task5.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/logstream" X-Client-IP="103.211.39.236" X-Client-Port="61403" >
+  <step title="LogStreamHandlerMiddleware.Invoke" date="2026-08-30T12:45:38.554" /><!-- duration: 72ms -->
+  <step title="Error occurred" date="2026-08-30T12:52:38.637" type="error" text="LogStreamManager: ProcessRequest end" /><!-- duration: 50ms -->
+  <step title="Outgoing response" date="2026-08-30T12:52:38.712" type="response" statusCode="200" statusText="OK" /><!-- duration: 3ms -->
+</step><!-- duration: 420180ms -->
