@@ -81,15 +81,6 @@ variable "app_service_sku" {
   type        = string
 }
 
-variable "key_vault_subnet_id" {
-  description = "Subnet ID for Key Vault Private Endpoint"
-  type        = string
-}
-
-variable "virtual_network_id" {
-  description = "Virtual Network ID"
-  type        = string
-}
 
 variable "enable_app_service_delegation" {
   description = "Enable App Service subnet delegation"
