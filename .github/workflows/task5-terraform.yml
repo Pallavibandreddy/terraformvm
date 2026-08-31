@@ -81,6 +81,7 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
@@ -131,12 +132,22 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate
-        
+
       - name: Check Terraform Variables
         run: |
           echo "Checking Terraform variable names..."
           grep -E '^[[:space:]]*[a-zA-Z_]+[[:space:]]*=' terraform.tfvars \
             | sed 's/=.*$/=<provided>/'
+
+      - name: Check SQL admin secret
+        shell: bash
+        run: |
+           if [ -z "${{ secrets.SQL_ADMINISTRATOR_LOGIN }}" ]; then
+             echo "ERROR: SQL_ADMINISTRATOR_LOGIN secret is empty or unavailable"
+             exit 1
+           else
+            echo "SQL_ADMINISTRATOR_LOGIN secret is available"
+           fi     
 
       - name: Terraform Plan
         run: |
