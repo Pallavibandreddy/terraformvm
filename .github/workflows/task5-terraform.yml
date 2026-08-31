@@ -131,9 +131,17 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate
+        
+      - name: Check Terraform Variables
+        run: |
+          echo "Checking Terraform variable names..."
+          grep -E '^[[:space:]]*[a-zA-Z_]+[[:space:]]*=' terraform.tfvars \
+            | sed 's/=.*$/=<provided>/'
 
       - name: Terraform Plan
-        run: terraform plan -input=false -var-file="terraform.tfvars"
+        run: |
+          echo "Running Terraform plan..."
+          terraform plan -input=false -var-file="terraform.tfvars" -no-color
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false -var-file="terraform.tfvars"
