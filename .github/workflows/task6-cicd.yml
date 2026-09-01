@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'task6-app/**'
+      - 'environments/task6/**'
       - '.github/workflows/task6-cicd.yml'
 
   workflow_dispatch:
@@ -14,7 +15,60 @@ permissions:
   id-token: write
   contents: read
 
+env:
+  TERRAFORM_VERSION: "1.13.3"
+  TERRAFORM_DIR: "environments/task6"
+
 jobs:
+
+  # ==================================================
+  # STAGE 0 - TERRAFORM INFRASTRUCTURE
+  # ==================================================
+
+  terraform:
+    name: Terraform Infrastructure
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
+
+      - name: Terraform Init
+        working-directory: ${{ env.TERRAFORM_DIR }}
+        run: terraform init
+
+      - name: Terraform Validate
+        working-directory: ${{ env.TERRAFORM_DIR }}
+        run: terraform validate
+
+      - name: Terraform Plan
+        working-directory: ${{ env.TERRAFORM_DIR }}
+        run: |
+          terraform plan \
+            -var="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
+            -var="ui_app_name=${{ secrets.UI_APP_NAME }}" \
+            -var="api_app_name=${{ secrets.API_APP_NAME }}"
+
+      - name: Terraform Apply
+        working-directory: ${{ env.TERRAFORM_DIR }}
+        run: |
+          terraform apply -auto-approve \
+            -var="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
+            -var="ui_app_name=${{ secrets.UI_APP_NAME }}" \
+            -var="api_app_name=${{ secrets.API_APP_NAME }}"
 
   # ==================================================
   # DETECT CHANGES
@@ -22,6 +76,7 @@ jobs:
 
   detect-changes:
     name: Detect Changes
+    needs: terraform
     runs-on: ubuntu-latest
 
     outputs:
