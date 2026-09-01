@@ -46,6 +46,33 @@ jobs:
             --query "{subscription:id,tenantId:tenantId,user:user}" \
             -o json
 
+      - name: Check service principal
+        env:
+          CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+        run: |
+          az ad sp show \
+            --id "$CLIENT_ID" \
+            --query "{appId:appId,objectId:id,displayName:displayName}" \
+            -o table
+
+      - name: Check Storage role
+        env:
+          CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+        run: |
+          OBJECT_ID=$(az ad sp show \
+            --id "$CLIENT_ID" \
+            --query id \
+            -o tsv)
+
+          echo "Service Principal Object ID: $OBJECT_ID"
+
+          az role assignment list \
+            --assignee "$OBJECT_ID" \
+            --scope "/subscriptions/${{ secrets.AZURE_SUBSCRIPTION_ID }}/resourceGroups/rg-tfstate-fullstack/providers/Microsoft.Storage/storageAccounts/stfullstackcicd2026" \
+            --include-inherited \
+            --query "[].{role:roleDefinitionName,scope:scope}" \
+            -o table
+
       - name: Test Storage Blob access
         run: |
           az storage blob list \
