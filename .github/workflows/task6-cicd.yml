@@ -56,19 +56,14 @@ jobs:
             -o table
 
       - name: Check Storage role
-        env:
-          CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
         run: |
-          OBJECT_ID=$(az ad sp show \
-            --id "$CLIENT_ID" \
-            --query id \
-            -o tsv)
+          OBJECT_ID="dd1fde91-1e95-495e-baef-17338e2320ec"
 
-          echo "Service Principal Object ID: $OBJECT_ID"
+          echo "Checking Service Principal Object ID: $OBJECT_ID"
 
           az role assignment list \
             --assignee "$OBJECT_ID" \
-            --scope "/subscriptions/${{ secrets.AZURE_SUBSCRIPTION_ID }}/resourceGroups/rg-tfstate-fullstack/providers/Microsoft.Storage/storageAccounts/stfullstackcicd2026" \
+            --all \
             --include-inherited \
             --query "[].{role:roleDefinitionName,scope:scope}" \
             -o table
@@ -80,7 +75,6 @@ jobs:
             --container-name tfstate \
             --auth-mode login \
             -o table
-
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
