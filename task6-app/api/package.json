@@ -1,0 +1,14 @@
+{
+  "name": "devflow-api",
+  "version": "1.0.0",
+  "description": "Task 6 CI/CD demonstration API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo API build successful"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
