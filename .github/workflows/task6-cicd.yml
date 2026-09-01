@@ -24,7 +24,6 @@ jobs:
   # ==================================================
   # STAGE 0 - TERRAFORM INFRASTRUCTURE
   # ==================================================
-
   terraform:
     name: Terraform Infrastructure
     runs-on: ubuntu-latest
@@ -44,8 +43,8 @@ jobs:
       - name: Check Azure identity
         run: |
           az account show \
-            --query "{subscription:id,tenantId:tenantId,user:user.name,type:user.type}" \
-            -o table
+            --query "{subscription:id,tenantId:tenantId,user:user}" \
+            -o json
 
       - name: Test Storage Blob access
         run: |
