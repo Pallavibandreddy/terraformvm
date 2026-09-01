@@ -41,6 +41,20 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+      - name: Check Azure identity
+        run: |
+          az account show \
+            --query "{subscription:id,tenantId:tenantId,user:user.name,type:user.type}" \
+            -o table
+
+      - name: Test Storage Blob access
+        run: |
+          az storage blob list \
+            --account-name stfullstackcicd2026 \
+            --container-name tfstate \
+            --auth-mode login \
+            -o table
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
@@ -89,7 +103,7 @@ jobs:
             -var="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
             -var="ui_app_name=${{ secrets.UI_APP_NAME }}" \
             -var="api_app_name=${{ secrets.API_APP_NAME }}"
-            
+
   # ==================================================
   # DETECT CHANGES
   # ==================================================
