@@ -48,14 +48,29 @@ jobs:
 
       - name: Terraform Init
         working-directory: ${{ env.TERRAFORM_DIR }}
-        run: terraform init
+        env:
+          ARM_USE_OIDC: true
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        run: terraform init -reconfigure
 
       - name: Terraform Validate
         working-directory: ${{ env.TERRAFORM_DIR }}
+        env:
+          ARM_USE_OIDC: true
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         run: terraform validate
 
       - name: Terraform Plan
         working-directory: ${{ env.TERRAFORM_DIR }}
+        env:
+          ARM_USE_OIDC: true
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         run: |
           terraform plan \
             -var="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
@@ -64,12 +79,17 @@ jobs:
 
       - name: Terraform Apply
         working-directory: ${{ env.TERRAFORM_DIR }}
+        env:
+          ARM_USE_OIDC: true
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         run: |
           terraform apply -auto-approve \
             -var="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
             -var="ui_app_name=${{ secrets.UI_APP_NAME }}" \
             -var="api_app_name=${{ secrets.API_APP_NAME }}"
-
+            
   # ==================================================
   # DETECT CHANGES
   # ==================================================
