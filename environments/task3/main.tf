@@ -16,8 +16,7 @@ module "net" {
   vnet_address_space    = var.vnet_address_space
   subnet_name           = var.subnet_name
   subnet_address_prefix = var.subnet_address_prefix
-
-  nsg_name = var.nsg_name
+  nsg_name              = var.nsg_name
 
   nic_config = {
     for i in range(var.vm_count) : "vm${i + 1}" => {
@@ -25,8 +24,9 @@ module "net" {
       public_ip_name = "vm${i + 1}-pip"
     }
   }
-}
 
+  security_rules = var.security_rules
+}
 
 module "vm" {
   count = var.vm_count

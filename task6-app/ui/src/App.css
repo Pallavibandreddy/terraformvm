@@ -112,7 +112,8 @@ body {
     #c084fc
   );
 
-  -webkit-background-clip: text;
+-webkit-background-clip: text;
+background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

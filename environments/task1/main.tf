@@ -17,10 +17,16 @@ module "network" {
   subnet_name           = var.subnet_name
   subnet_address_prefix = var.subnet_address_prefix
 
-  nsg_name       = var.nsg_name
-  public_ip_name = var.public_ip_name
-  nic_name       = var.nic_name
+  nsg_name = var.nsg_name
 
+  nic_config = {
+    vm1 = {
+      nic_name       = var.nic_name
+      public_ip_name = var.public_ip_name
+    }
+  }
+
+  security_rules = var.security_rules
 }
 
 

@@ -25,6 +25,7 @@ module "net" {
       public_ip_name = vm.public_ip_name
     }
   }
+  security_rules = var.security_rules
 }
 
 

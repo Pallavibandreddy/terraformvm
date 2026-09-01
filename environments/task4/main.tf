@@ -25,6 +25,7 @@ module "net" {
       public_ip_name = "vm1-pip"
     }
   }
+  security_rules = var.security_rules
 }
 
 
