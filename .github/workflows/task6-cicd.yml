@@ -57,7 +57,7 @@ jobs:
 
       - name: Check Storage role
         run: |
-          OBJECT_ID="dd1fde91-1e95-495e-baef-17338e2320ec"
+          OBJECT_ID="b9ebd6da-eabe-4335-813e-56518801c44a"
 
           echo "Checking Service Principal Object ID: $OBJECT_ID"
 
@@ -68,6 +68,13 @@ jobs:
             --query "[].{role:roleDefinitionName,scope:scope}" \
             -o table
 
+      - name: Check Storage token
+        run: |
+          az account get-access-token \
+            --resource https://storage.azure.com/ \
+            --query "{expiresOn:expiresOn,subscription:subscription,tenant:tenant,tokenPresent:accessToken != null}" \
+            -o json
+            
       - name: Test Storage Blob access
         run: |
           az storage blob list \
