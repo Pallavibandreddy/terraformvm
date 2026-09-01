@@ -1,16 +1,17 @@
 resource "azurerm_log_analytics_workspace" "this" {
   name                = var.log_analytics_name
-  location            = "centralindia"
+  location            = var.location
   resource_group_name = var.resource_group_name
-  sku                 = "PerGB2018"
-  retention_in_days   = 30
+
+  sku               = var.log_analytics_sku
+  retention_in_days = var.log_analytics_retention_days
 }
 
 resource "azurerm_application_insights" "this" {
   name                = var.application_insights_name
-  location            = "centralindia"
+  location            = var.location
   resource_group_name = var.resource_group_name
 
-  application_type = "web"
+  application_type = var.application_type
   workspace_id     = azurerm_log_analytics_workspace.this.id
 }

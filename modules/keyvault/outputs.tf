@@ -17,3 +17,8 @@ output "private_endpoint_id" {
   description = "Key Vault private endpoint ID"
   value       = azurerm_private_endpoint.this.id
 }
+
+output "app_insights_instrumentation_key_secret_uri" {
+  description = "Versionless URI of the Application Insights instrumentation key secret"
+  value       = azurerm_key_vault_secret.appinsights_instrumentation_key.versionless_id
+}

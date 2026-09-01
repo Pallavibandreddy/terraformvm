@@ -32,3 +32,23 @@ variable "app_service_principal_id" {
   description = "App Service managed identity principal ID"
   type        = string
 }
+
+variable "sql_server_version" {
+  description = "SQL Server version"
+  type        = string
+}
+
+variable "azuread_authentication_only" {
+  description = "Enable Microsoft Entra-only authentication"
+  type        = bool
+}
+
+variable "public_network_access_enabled" {
+  description = "Enable public network access to SQL Server"
+  type        = bool
+}
+
+variable "sql_database_sku" {
+  description = "SQL Database SKU"
+  type        = string
+}

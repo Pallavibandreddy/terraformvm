@@ -49,7 +49,47 @@ variable "key_vault_url" {
   type        = string
 }
 
-variable "app_insights_instrumentation_key" {
-  description = "Application Insights instrumentation key"
+variable "app_insights_instrumentation_key_secret_uri" {
+  description = "Key Vault secret URI for Application Insights instrumentation key"
+  type        = string
+}
+
+variable "os_type" {
+  description = "Operating system type for the App Service Plan"
+  type        = string
+}
+
+variable "identity_type" {
+  description = "Managed identity type for the App Service"
+  type        = string
+}
+
+variable "always_on" {
+  description = "Whether the App Service should always be running"
+  type        = bool
+}
+
+variable "app_command_line" {
+  description = "Application startup command"
+  type        = string
+}
+
+variable "node_version" {
+  description = "Node.js runtime version"
+  type        = string
+}
+
+variable "scm_do_build_during_deployment" {
+  description = "Enable SCM build during deployment"
+  type        = string
+}
+
+variable "enable_oryx_build" {
+  description = "Enable Oryx build"
+  type        = string
+}
+
+variable "key_vault_role" {
+  description = "Key Vault RBAC role assigned to the App Service identity"
   type        = string
 }
