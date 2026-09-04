@@ -1,0 +1,393 @@
+name: Task 7 Versioned Full Stack CI/CD
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'task6-app/**'
+      - '.github/workflows/task7-cicd.yml'
+
+  workflow_dispatch:
+    inputs:
+      deployment_tag:
+        description: 'Existing tag to deploy (leave empty for normal deployment)'
+        required: false
+        type: string
+
+permissions:
+  id-token: write
+  contents: write
+
+env:
+  KEY_VAULT_NAME: "kv-task7-version-pgsn"
+  VERSION_SECRET_NAME: "app-version"
+
+concurrency:
+  group: task7-production-deployment
+  cancel-in-progress: false
+
+jobs:
+
+  # ==================================================
+  # STAGE 0 - DETERMINE VERSION
+  # ==================================================
+
+  version:
+    name: Determine Application Version
+    runs-on: ubuntu-latest
+
+    outputs:
+      version: ${{ steps.final_version.outputs.version }}
+      deployment_mode: ${{ steps.mode.outputs.mode }}
+      deployment_tag: ${{ steps.mode.outputs.tag }}
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine deployment mode
+        id: mode
+        shell: bash
+        run: |
+          TAG="${{ inputs.deployment_tag }}"
+
+          if [ -n "$TAG" ]; then
+            echo "mode=tag" >> "$GITHUB_OUTPUT"
+            echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+            echo "Manual tag deployment selected: $TAG"
+          else
+            echo "mode=normal" >> "$GITHUB_OUTPUT"
+            echo "tag=" >> "$GITHUB_OUTPUT"
+            echo "Normal deployment selected"
+          fi
+
+      - name: Login to Azure
+        if: inputs.deployment_tag == ''
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Read current version and calculate next version
+        if: inputs.deployment_tag == ''
+        id: normal_version
+        shell: bash
+        run: |
+          CURRENT_VERSION=$(az keyvault secret show \
+            --vault-name "$KEY_VAULT_NAME" \
+            --name "$VERSION_SECRET_NAME" \
+            --query value \
+            --output tsv)
+
+          echo "Current application version: $CURRENT_VERSION"
+
+          if [[ ! "$CURRENT_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid version stored in Key Vault: $CURRENT_VERSION"
+            exit 1
+          fi
+
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
+
+          NEW_PATCH=$((PATCH + 1))
+          NEW_VERSION="${MAJOR}.${MINOR}.${NEW_PATCH}"
+
+          echo "New application version: $NEW_VERSION"
+
+          echo "version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Validate and extract tag version
+        if: inputs.deployment_tag != ''
+        id: tag_version
+        shell: bash
+        run: |
+          TAG="${{ inputs.deployment_tag }}"
+
+          if [[ ! "$TAG" =~ ^dev-[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid tag format: $TAG"
+            echo "Expected format: dev-x.y.z"
+            exit 1
+          fi
+
+          VERSION="${TAG#dev-}"
+
+          echo "Existing deployment tag: $TAG"
+          echo "Application version: $VERSION"
+
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Set final version
+        id: final_version
+        shell: bash
+        run: |
+          if [ "${{ inputs.deployment_tag }}" != "" ]; then
+            VERSION="${{ steps.tag_version.outputs.version }}"
+          else
+            VERSION="${{ steps.normal_version.outputs.version }}"
+          fi
+
+          echo "Final deployment version: $VERSION"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+
+  # ==================================================
+  # STAGE 1 - BUILD UI
+  # ==================================================
+
+  build-ui:
+    name: Build UI
+    needs: version
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ needs.version.outputs.deployment_mode == 'tag' && needs.version.outputs.deployment_tag || github.sha }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: task6-app/ui/package-lock.json
+
+      - name: Set application version
+        working-directory: task6-app/ui
+        run: |
+          npm version "${{ needs.version.outputs.version }}" --no-git-tag-version
+
+      - name: Install dependencies
+        working-directory: task6-app/ui
+        run: npm ci
+
+      - name: Build UI
+        working-directory: task6-app/ui
+        env:
+          VITE_API_URL: https://task6-api.azurewebsites.net
+        run: npm run build
+
+      - name: Upload UI artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: task7-ui-build
+          path: |
+            task6-app/ui/dist
+            task6-app/ui/package.json
+            task6-app/ui/package-lock.json
+
+
+  # ==================================================
+  # STAGE 2 - BUILD API
+  # ==================================================
+
+  build-api:
+    name: Build API
+    needs: version
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ needs.version.outputs.deployment_mode == 'tag' && needs.version.outputs.deployment_tag || github.sha }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: task6-app/api/package-lock.json
+
+      - name: Set application version
+        working-directory: task6-app/api
+        run: |
+          npm version "${{ needs.version.outputs.version }}" --no-git-tag-version
+
+      - name: Install dependencies
+        working-directory: task6-app/api
+        run: npm ci
+
+      - name: Build API
+        working-directory: task6-app/api
+        run: npm run build
+
+      - name: Upload API artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: task7-api-build
+          path: |
+            task6-app/api/package.json
+            task6-app/api/package-lock.json
+            task6-app/api/server.js
+
+
+  # ==================================================
+  # STAGE 3 - DEPLOY UI
+  # ==================================================
+
+  deploy-ui:
+    name: Deploy UI
+    needs:
+      - version
+      - build-ui
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Download UI artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: task7-ui-build
+          path: ui
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Prepare UI deployment package
+        run: |
+          cd ui
+          zip -r ../ui.zip .
+
+      - name: Deploy UI
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ secrets.UI_APP_NAME }}
+          package: ui.zip
+
+
+  # ==================================================
+  # STAGE 4 - DEPLOY API
+  # ==================================================
+
+  deploy-api:
+    name: Deploy API
+    needs:
+      - version
+      - build-api
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Download API artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: task7-api-build
+          path: api
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Prepare API deployment package
+        run: |
+          cd api
+          zip -r ../api.zip .
+
+      - name: Deploy API
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ secrets.API_APP_NAME }}
+          package: api.zip
+
+
+  # ==================================================
+  # STAGE 5 - UPDATE KEY VAULT
+  # ==================================================
+
+  update-version:
+    name: Update Version in Key Vault
+    needs:
+      - version
+      - deploy-ui
+      - deploy-api
+
+    if: needs.version.outputs.deployment_mode == 'normal'
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Update application version
+        run: |
+          VERSION="${{ needs.version.outputs.version }}"
+
+          echo "Updating Key Vault version to $VERSION"
+
+          az keyvault secret set \
+            --vault-name "$KEY_VAULT_NAME" \
+            --name "$VERSION_SECRET_NAME" \
+            --value "$VERSION" \
+            --output none
+
+          echo "Key Vault version updated successfully."
+
+
+  # ==================================================
+  # STAGE 6 - CREATE GIT TAG
+  # ==================================================
+
+  create-tag:
+    name: Create Deployment Git Tag
+    needs:
+      - version
+      - deploy-ui
+      - deploy-api
+      - update-version
+
+    if: needs.version.outputs.deployment_mode == 'normal'
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create deployment tag
+        shell: bash
+        run: |
+          VERSION="${{ needs.version.outputs.version }}"
+          TAG="dev-${VERSION}"
+
+          echo "Creating Git tag: $TAG"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists."
+            exit 1
+          fi
+
+          git tag -a "$TAG" -m "Successful deployment $VERSION" "$GITHUB_SHA"
+
+          git push origin "$TAG"
+
+          echo "Git tag created successfully: $TAG"
