@@ -135,12 +135,97 @@ jobs:
 
 
   # ==================================================
-  # STAGE 1 - BUILD UI
+  # STAGE 1 - DETECT CHANGES
+  # ==================================================
+
+  detect-changes:
+    name: Detect UI and API Changes
+    needs: version
+    runs-on: ubuntu-latest
+
+    outputs:
+      ui_changed: ${{ steps.changes.outputs.ui_changed }}
+      api_changed: ${{ steps.changes.outputs.api_changed }}
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ needs.version.outputs.deployment_mode == 'tag' && needs.version.outputs.deployment_tag || github.sha }}
+
+      - name: Detect changed components
+        id: changes
+        shell: bash
+        run: |
+
+          # ------------------------------------------
+          # Manual existing-tag deployment
+          # ------------------------------------------
+
+          if [ "${{ needs.version.outputs.deployment_mode }}" = "tag" ]; then
+
+            echo "Manual tag deployment."
+            echo "UI changed: true"
+            echo "API changed: true"
+
+            echo "ui_changed=true" >> "$GITHUB_OUTPUT"
+            echo "api_changed=true" >> "$GITHUB_OUTPUT"
+
+            exit 0
+          fi
+
+          # ------------------------------------------
+          # Normal main branch deployment
+          # ------------------------------------------
+
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+
+          echo "Comparing:"
+          echo "Before: $BEFORE"
+          echo "After:  $AFTER"
+
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r "$AFTER")
+          else
+            CHANGED_FILES=$(git diff --name-only "$BEFORE" "$AFTER")
+          fi
+
+          echo "Changed files:"
+          echo "$CHANGED_FILES"
+
+          UI_CHANGED=false
+          API_CHANGED=false
+
+          if echo "$CHANGED_FILES" | grep -q '^task6-app/ui/'; then
+            UI_CHANGED=true
+          fi
+
+          if echo "$CHANGED_FILES" | grep -q '^task6-app/api/'; then
+            API_CHANGED=true
+          fi
+
+          echo "UI changed: $UI_CHANGED"
+          echo "API changed: $API_CHANGED"
+
+          echo "ui_changed=$UI_CHANGED" >> "$GITHUB_OUTPUT"
+          echo "api_changed=$API_CHANGED" >> "$GITHUB_OUTPUT"
+
+
+  # ==================================================
+  # STAGE 2 - BUILD UI
   # ==================================================
 
   build-ui:
     name: Build UI
-    needs: version
+    needs:
+      - version
+      - detect-changes
+
+    if: needs.detect-changes.outputs.ui_changed == 'true'
+
     runs-on: ubuntu-latest
 
     steps:
@@ -184,12 +269,17 @@ jobs:
 
 
   # ==================================================
-  # STAGE 2 - BUILD API
+  # STAGE 3 - BUILD API
   # ==================================================
 
   build-api:
     name: Build API
-    needs: version
+    needs:
+      - version
+      - detect-changes
+
+    if: needs.detect-changes.outputs.api_changed == 'true'
+
     runs-on: ubuntu-latest
 
     steps:
@@ -231,14 +321,17 @@ jobs:
 
 
   # ==================================================
-  # STAGE 3 - DEPLOY UI
+  # STAGE 4 - DEPLOY UI
   # ==================================================
 
   deploy-ui:
     name: Deploy UI
     needs:
       - version
+      - detect-changes
       - build-ui
+
+    if: needs.detect-changes.outputs.ui_changed == 'true'
 
     runs-on: ubuntu-latest
 
@@ -270,14 +363,17 @@ jobs:
 
 
   # ==================================================
-  # STAGE 4 - DEPLOY API
+  # STAGE 5 - DEPLOY API
   # ==================================================
 
   deploy-api:
     name: Deploy API
     needs:
       - version
+      - detect-changes
       - build-api
+
+    if: needs.detect-changes.outputs.api_changed == 'true'
 
     runs-on: ubuntu-latest
 
@@ -309,17 +405,28 @@ jobs:
 
 
   # ==================================================
-  # STAGE 5 - UPDATE KEY VAULT
+  # STAGE 6 - UPDATE KEY VAULT
   # ==================================================
 
   update-version:
     name: Update Version in Key Vault
     needs:
       - version
+      - detect-changes
       - deploy-ui
       - deploy-api
 
-    if: needs.version.outputs.deployment_mode == 'normal'
+    if: >
+      always() &&
+      needs.version.result == 'success' &&
+      needs.detect-changes.result == 'success' &&
+      needs.version.outputs.deployment_mode == 'normal' &&
+      (needs.deploy-ui.result == 'success' || needs.deploy-ui.result == 'skipped') &&
+      (needs.deploy-api.result == 'success' || needs.deploy-api.result == 'skipped') &&
+      (
+        needs.detect-changes.outputs.ui_changed == 'true' ||
+        needs.detect-changes.outputs.api_changed == 'true'
+      )
 
     runs-on: ubuntu-latest
 
@@ -348,18 +455,30 @@ jobs:
 
 
   # ==================================================
-  # STAGE 6 - CREATE GIT TAG
+  # STAGE 7 - CREATE GIT TAG
   # ==================================================
 
   create-tag:
     name: Create Deployment Git Tag
     needs:
       - version
+      - detect-changes
       - deploy-ui
       - deploy-api
       - update-version
 
-    if: needs.version.outputs.deployment_mode == 'normal'
+    if: >
+      always() &&
+      needs.version.result == 'success' &&
+      needs.detect-changes.result == 'success' &&
+      needs.version.outputs.deployment_mode == 'normal' &&
+      needs.update-version.result == 'success' &&
+      (needs.deploy-ui.result == 'success' || needs.deploy-ui.result == 'skipped') &&
+      (needs.deploy-api.result == 'success' || needs.deploy-api.result == 'skipped') &&
+      (
+        needs.detect-changes.outputs.ui_changed == 'true' ||
+        needs.detect-changes.outputs.api_changed == 'true'
+      )
 
     runs-on: ubuntu-latest
 
