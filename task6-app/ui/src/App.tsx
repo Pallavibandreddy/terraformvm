@@ -146,7 +146,7 @@ function App() {
       <footer>
         Task 6 • Conditional CI/CD Demonstration
       </footer>
-      <h1>Task 6 Full Stack Applications</h1>
+      <h1>Task 6 Full Stack Application</h1>
     </div>
   );
 }
